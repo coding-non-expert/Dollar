@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06AFC7CC2363F8D500C2A453 /* coin bank.png in Resources */ = {isa = PBXBuildFile; fileRef = 06AFC7CB2363F8D500C2A453 /* coin bank.png */; };
+		06AFC7CE2363FAA500C2A453 /* target icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 06AFC7CD2363FAA500C2A453 /* target icon.png */; };
 		93E344B3235AB4E600A9C4DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E344B2235AB4E600A9C4DD /* AppDelegate.swift */; };
 		93E344B5235AB4E600A9C4DD /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E344B4235AB4E600A9C4DD /* FirstViewController.swift */; };
 		93E344B7235AB4E600A9C4DD /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E344B6235AB4E600A9C4DD /* SecondViewController.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06AFC7CB2363F8D500C2A453 /* coin bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coin bank.png"; sourceTree = "<group>"; };
+		06AFC7CD2363FAA500C2A453 /* target icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "target icon.png"; sourceTree = "<group>"; };
 		93E344AF235AB4E600A9C4DD /* Dollar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dollar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93E344B2235AB4E600A9C4DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93E344B4235AB4E600A9C4DD /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -109,7 +113,9 @@
 				93E344B6235AB4E600A9C4DD /* SecondViewController.swift */,
 				93E344B8235AB4E600A9C4DD /* Main.storyboard */,
 				93E344BB235AB4E900A9C4DD /* Assets.xcassets */,
+				06AFC7CD2363FAA500C2A453 /* target icon.png */,
 				980AD8502363F0C5008A2424 /* car icon.png */,
+				06AFC7CB2363F8D500C2A453 /* coin bank.png */,
 				93E344BD235AB4E900A9C4DD /* LaunchScreen.storyboard */,
 				93E344C0235AB4E900A9C4DD /* Info.plist */,
 			);
@@ -240,7 +246,9 @@
 			files = (
 				93E344BF235AB4E900A9C4DD /* LaunchScreen.storyboard in Resources */,
 				93E344BC235AB4E900A9C4DD /* Assets.xcassets in Resources */,
+				06AFC7CE2363FAA500C2A453 /* target icon.png in Resources */,
 				980AD8512363F0C5008A2424 /* car icon.png in Resources */,
+				06AFC7CC2363F8D500C2A453 /* coin bank.png in Resources */,
 				93E344BA235AB4E600A9C4DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
