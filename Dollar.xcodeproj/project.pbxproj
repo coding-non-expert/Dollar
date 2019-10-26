@@ -15,6 +15,8 @@
 		93E344BF235AB4E900A9C4DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93E344BD235AB4E900A9C4DD /* LaunchScreen.storyboard */; };
 		93E344CA235AB4E900A9C4DD /* DollarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E344C9235AB4E900A9C4DD /* DollarTests.swift */; };
 		93E344D5235AB4E900A9C4DD /* DollarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E344D4235AB4E900A9C4DD /* DollarUITests.swift */; };
+		980AD84F2363EC58008A2424 /* BudgetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980AD84E2363EC58008A2424 /* BudgetTableViewController.swift */; };
+		980AD8512363F0C5008A2424 /* car icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 980AD8502363F0C5008A2424 /* car icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		93E344D0235AB4E900A9C4DD /* DollarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DollarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93E344D4235AB4E900A9C4DD /* DollarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DollarUITests.swift; sourceTree = "<group>"; };
 		93E344D6235AB4E900A9C4DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		980AD84E2363EC58008A2424 /* BudgetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTableViewController.swift; sourceTree = "<group>"; };
+		980AD8502363F0C5008A2424 /* car icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "car icon.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 		93E344A6235AB4E600A9C4DD = {
 			isa = PBXGroup;
 			children = (
+				980AD84E2363EC58008A2424 /* BudgetTableViewController.swift */,
 				93E344B1235AB4E600A9C4DD /* Dollar */,
 				93E344C8235AB4E900A9C4DD /* DollarTests */,
 				93E344D3235AB4E900A9C4DD /* DollarUITests */,
@@ -104,6 +109,7 @@
 				93E344B6235AB4E600A9C4DD /* SecondViewController.swift */,
 				93E344B8235AB4E600A9C4DD /* Main.storyboard */,
 				93E344BB235AB4E900A9C4DD /* Assets.xcassets */,
+				980AD8502363F0C5008A2424 /* car icon.png */,
 				93E344BD235AB4E900A9C4DD /* LaunchScreen.storyboard */,
 				93E344C0235AB4E900A9C4DD /* Info.plist */,
 			);
@@ -234,6 +240,7 @@
 			files = (
 				93E344BF235AB4E900A9C4DD /* LaunchScreen.storyboard in Resources */,
 				93E344BC235AB4E900A9C4DD /* Assets.xcassets in Resources */,
+				980AD8512363F0C5008A2424 /* car icon.png in Resources */,
 				93E344BA235AB4E600A9C4DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				980AD84F2363EC58008A2424 /* BudgetTableViewController.swift in Sources */,
 				93E344B7235AB4E600A9C4DD /* SecondViewController.swift in Sources */,
 				93E344B3235AB4E600A9C4DD /* AppDelegate.swift in Sources */,
 				93E344B5235AB4E600A9C4DD /* FirstViewController.swift in Sources */,
