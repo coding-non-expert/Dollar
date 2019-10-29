@@ -10,6 +10,12 @@ import UIKit
 
 class BudgetTableViewController: UITableViewController {
 
+    var budget = [
+        monthlyBudget(category: "Transport"),
+        monthlyBudget(category: "Food"),
+        monthlyBudget(category: "Savings")
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,7 +35,7 @@ class BudgetTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return budget.count
     }
 
     
@@ -37,7 +43,8 @@ class BudgetTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "budgetCell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = "Car"
+        let monthlyBudget = budget[indexPath.row]
+        cell.textLabel?.text = monthlyBudget.category
 
         return cell
     }
@@ -51,24 +58,27 @@ class BudgetTableViewController: UITableViewController {
     }
     */
 
-    /*
+   
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            budget.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
-    /*
+    
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+        let monthlyBudget = budget.remove(at: fromIndexPath.row)
+        budget.insert(monthlyBudget, at: to.row)
+        tableView.reloadData()
 
     }
-    */
+    
 
     /*
     // Override to support conditional rearranging of the table view.
