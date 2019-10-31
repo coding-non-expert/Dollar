@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		06AFC7CE2363FAA500C2A453 /* target icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 06AFC7CD2363FAA500C2A453 /* target icon.png */; };
+		93426943236AA6EB006B9A63 /* dollar icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 93426942236AA6EA006B9A63 /* dollar icon.png */; };
 		93E344B3235AB4E600A9C4DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E344B2235AB4E600A9C4DD /* AppDelegate.swift */; };
 		93E344B5235AB4E600A9C4DD /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E344B4235AB4E600A9C4DD /* FirstViewController.swift */; };
 		93E344B7235AB4E600A9C4DD /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E344B6235AB4E600A9C4DD /* SecondViewController.swift */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		06AFC7CD2363FAA500C2A453 /* target icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "target icon.png"; sourceTree = "<group>"; };
+		93426942236AA6EA006B9A63 /* dollar icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dollar icon.png"; sourceTree = "<group>"; };
 		93E344AF235AB4E600A9C4DD /* Dollar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dollar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93E344B2235AB4E600A9C4DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93E344B4235AB4E600A9C4DD /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				93E344B6235AB4E600A9C4DD /* SecondViewController.swift */,
 				93E344B8235AB4E600A9C4DD /* Main.storyboard */,
 				93E344BB235AB4E900A9C4DD /* Assets.xcassets */,
+				93426942236AA6EA006B9A63 /* dollar icon.png */,
 				986CF322236A990C000B463C /* icons */,
 				06AFC7CD2363FAA500C2A453 /* target icon.png */,
 				986CF337236A9A58000B463C /* caricon.png */,
@@ -300,6 +303,7 @@
 				986CF338236A9A58000B463C /* caricon.png in Resources */,
 				986CF336236A9992000B463C /* coinbank.png in Resources */,
 				986CF32E236A990D000B463C /* target.png in Resources */,
+				93426943236AA6EB006B9A63 /* dollar icon.png in Resources */,
 				06AFC7CE2363FAA500C2A453 /* target icon.png in Resources */,
 				986CF32C236A990D000B463C /* spendings.png in Resources */,
 				986CF331236A990D000B463C /* home.png in Resources */,
