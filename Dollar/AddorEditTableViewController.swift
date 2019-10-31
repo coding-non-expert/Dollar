@@ -11,20 +11,21 @@ import UIKit
 class AddorEditTableViewController: UITableViewController {
 
     var budget: monthlyBudget!
+    var needBudget = true
+    
     @IBOutlet weak var categoryTextfield: UITextField!
     @IBOutlet weak var iconTextField: UITextField!
     @IBOutlet weak var budgetTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        iconTextField.image = UIImage(named: budget.imageView)
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        if budget != nil{
+            needBudget = false
+            categoryTextfield.text = budget.category
+            iconTextField.text = budget.imageFileName
+            budgetTextField.text = "\(budget.budget)"
+            
+        }
     }
 
     // MARK: - Table view data source
@@ -90,13 +91,30 @@ class AddorEditTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "addBudget",
-            let destVC = segue.destination as? BudgetTableViewController,
+        if segue.identifier == "addBudget"{
+            let category = categoryTextfield.text ?? ""
+            let imageFileName = iconTextField.text ?? ""
+            let budget = budgetTextField.text ?? ""
+            
+            if budget == nil {
+                budget = monthlyBudget(category: category, imageFileName: imageFileName, budget: budget)
+                needBudget = true
+            } else {
+                budget.category = category
+                budget.imageFileName = imageFileName
+                budget.budget = budget
+                needBudget = false
+            }
+        }
+            /*let destVC = segue.destination as? BudgetTableViewController,
             let indexPath = tableView.indexPathForSelectedRow {
             
             
             destVC.budget = monthlyBudget(category: <#T##String#>, imageFileName: <#T##String#>, budget: <#T##Int#>)
-        }
+        }*/
+        
+
+        
     }
     @IBAction func unwindToBudgetTable(segue: UIStoryboardSegue){
         
