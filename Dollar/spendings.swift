@@ -12,4 +12,5 @@ import UIKit
 struct spendings{
     var category: String
     var imageFileName: String
+    var spending: Int
 }

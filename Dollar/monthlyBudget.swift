@@ -14,5 +14,6 @@ import UIKit
 struct monthlyBudget {
     var category: String
     var imageFileName: String
+    var budget: Int
 }
 

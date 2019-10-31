@@ -86,7 +86,9 @@ class AddorEditTableViewController: UITableViewController {
         if segue.identifier == "addBudget",
             let destVC = segue.destination as? BudgetTableViewController,
             let indexPath = tableView.indexPathForSelectedRow {
-            destVC.budgets = budget[indexPath.row]
+            
+            
+            destVC.budget = monthlyBudget(category: <#T##String#>, imageFileName: <#T##String#>, budget: <#T##Int#>)
         }
     }
     @IBAction func unwindToBudgetTable(segue: UIStoryboardSegue){
