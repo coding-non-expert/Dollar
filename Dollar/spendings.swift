@@ -1,19 +1,15 @@
 //
-//  monthlyBudget.swift
+//  spendings.swift
 //  Dollar
 //
-//  Created by Adeena Ansari on 29/10/19.
+//  Created by Adeena Ansari on 31/10/19.
 //  Copyright © 2019 cuzwhynot. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-
-
-struct monthlyBudget {
+struct spendings{
     var category: String
     var imageFileName: String
 }
-
-

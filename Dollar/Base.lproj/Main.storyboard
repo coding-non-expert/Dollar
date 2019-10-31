@@ -162,7 +162,16 @@
                             <outlet property="delegate" destination="3Tf-AJ-wS5" id="jpn-mD-AoX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Monthly Budget" id="gxO-cG-hww"/>
+                    <navigationItem key="navigationItem" title="Monthly Budget" id="gxO-cG-hww">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cjA-V6-Lk6">
+                            <connections>
+                                <action selector="barButtonPressed:" destination="3Tf-AJ-wS5" id="cLf-rQ-UHf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="plusButton" destination="cjA-V6-Lk6" id="5By-Om-YVn"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ulc-Wk-QRJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -191,13 +200,13 @@
         <!--Daily Spending-->
         <scene sceneID="rZh-3l-hDc">
             <objects>
-                <tableViewController id="IwD-fa-yW7" sceneMemberID="viewController">
+                <tableViewController id="IwD-fa-yW7" customClass="SpendingsTableViewController" customModule="Dollar" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7SL-5F-O9U">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="14B-x7-mSP" imageView="Wfr-Yz-PJO" style="IBUITableViewCellStyleDefault" id="dnK-mD-bfe">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="spendingsCell" textLabel="14B-x7-mSP" imageView="Wfr-Yz-PJO" style="IBUITableViewCellStyleDefault" id="dnK-mD-bfe">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dnK-mD-bfe" id="oeM-RM-mJw">
@@ -235,7 +244,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S7b-mh-S5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2006" y="226"/>
+            <point key="canvasLocation" x="1970" y="226"/>
         </scene>
         <!--Item-->
         <scene sceneID="I2b-d6-FW6">
@@ -254,7 +263,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o96-RE-5ar" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2006" y="-617"/>
+            <point key="canvasLocation" x="1970" y="-617"/>
         </scene>
         <!--Item-->
         <scene sceneID="m71-3u-yKj">
@@ -281,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vh6-RY-QiX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2925" y="-606"/>
+            <point key="canvasLocation" x="2774" y="-617"/>
         </scene>
         <!--Item-->
         <scene sceneID="Yd6-kG-LEP">
@@ -297,7 +306,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HOd-GP-ssU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3686" y="-617"/>
+            <point key="canvasLocation" x="3594" y="-617"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

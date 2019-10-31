@@ -1,26 +1,24 @@
 //
-//  BudgetTableViewController.swift
+//  SpendingsTableViewController.swift
 //  Dollar
 //
-//  Created by Adeena Ansari on 26/10/19.
+//  Created by Adeena Ansari on 31/10/19.
 //  Copyright © 2019 cuzwhynot. All rights reserved.
 //
 
 import UIKit
 
-class BudgetTableViewController: UITableViewController {
-
-    @IBOutlet weak var plusButton: UIBarButtonItem!
+class SpendingsTableViewController: UITableViewController {
     
-    var budget = [
-        monthlyBudget(category: "Transport", imageFileName: "caricon"),
-        monthlyBudget(category: "Food", imageFileName: ""),
-        monthlyBudget(category: "Savings", imageFileName: "coinbank"),
-        monthlyBudget(category: "Bills", imageFileName: ""),
-        monthlyBudget(category: "Tickets", imageFileName: ""),
-        monthlyBudget(category: "Holiday", imageFileName: "")
+    var dailySpendings = [
+        spendings(category: "Transport", imageFileName: "caricon"),
+        spendings(category: "Food", imageFileName: ""),
+        spendings(category: "Savings", imageFileName: "coinbank"),
+        spendings(category: "Bills", imageFileName: ""),
+        spendings(category: "Tickets", imageFileName: ""),
+        spendings(category: "Holiday", imageFileName: "")
     ]
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,11 +31,6 @@ class BudgetTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    
-    @IBAction func barButtonPressed(_ sender: Any) {
-        
-    }
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -45,17 +38,16 @@ class BudgetTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return budget.count
+        return dailySpendings.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "budgetCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "spendingsCell", for: indexPath)
 
-        // Configure the cell...
-        let monthlyBudget = budget[indexPath.row]
-        cell.textLabel?.text = monthlyBudget.category
-        cell.imageView?.image = UIImage(named: monthlyBudget.imageFileName)
+        let spendings = dailySpendings[indexPath.row]
+        cell.textLabel?.text = spendings.category
+        cell.imageView?.image = UIImage(named: spendings.imageFileName)
 
         return cell
     }
@@ -69,25 +61,25 @@ class BudgetTableViewController: UITableViewController {
     }
     */
 
-   
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            budget.remove(at: indexPath.row)
+            dailySpendings.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     
 
     
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-        let monthlyBudget = budget.remove(at: fromIndexPath.row)
-        budget.insert(monthlyBudget, at: to.row)
+        let spendings = dailySpendings.remove(at: fromIndexPath.row)
+        dailySpendings.insert(spendings, at: to.row)
         tableView.reloadData()
-
+        
     }
     
 
