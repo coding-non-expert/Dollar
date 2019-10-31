@@ -166,7 +166,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="cjA-V6-Lk6">
                             <connections>
                                 <action selector="barButtonPressed:" destination="3Tf-AJ-wS5" id="cLf-rQ-UHf"/>
-                                <segue destination="NjG-sp-wcd" kind="presentation" id="5NV-aN-zkK"/>
+                                <segue destination="NjG-sp-wcd" kind="presentation" identifier="addBudget" id="5NV-aN-zkK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -176,7 +176,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ulc-Wk-QRJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="423" y="226"/>
+            <point key="canvasLocation" x="1154" y="226"/>
         </scene>
         <!--Item-->
         <scene sceneID="1Ad-xK-StD">
@@ -201,7 +201,7 @@
         <!--Add or Edit-->
         <scene sceneID="gRb-dv-Kmf">
             <objects>
-                <tableViewController id="9s4-QN-qxE" sceneMemberID="viewController">
+                <tableViewController id="9s4-QN-qxE" customClass="AddorEditTableViewController" customModule="Dollar" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="J0r-jM-DqB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -284,7 +284,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M3x-22-cMV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="989.85507246376824" y="941.51785714285711"/>
+            <point key="canvasLocation" x="1590" y="956"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nxt-5f-aa7">
@@ -293,6 +293,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rl8-aO-JpY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.99607843139999996" green="0.74117647060000003" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="9s4-QN-qxE" kind="relationship" relationship="rootViewController" id="3pw-NL-dPF"/>
@@ -300,7 +301,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zqV-kg-4d0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="77" y="942"/>
+            <point key="canvasLocation" x="620" y="956"/>
         </scene>
         <!--Daily Spending-->
         <scene sceneID="rZh-3l-hDc">
@@ -377,17 +378,6 @@
                     <view key="view" contentMode="scaleToFill" id="Zfy-IU-FJY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qMd-NU-aAl">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99607843139999996" green="0.74117647060000003" blue="0.039918664380000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <navigationItem title="Title" id="Dy9-C0-WrW"/>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="D2r-Q4-n25"/>
                     </view>

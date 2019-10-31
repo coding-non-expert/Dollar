@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06AFC7CC2363F8D500C2A453 /* coinbank.png in Resources */ = {isa = PBXBuildFile; fileRef = 06AFC7CB2363F8D500C2A453 /* coinbank.png */; };
 		06AFC7CE2363FAA500C2A453 /* target icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 06AFC7CD2363FAA500C2A453 /* target icon.png */; };
 		93E344B3235AB4E600A9C4DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E344B2235AB4E600A9C4DD /* AppDelegate.swift */; };
 		93E344B5235AB4E600A9C4DD /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E344B4235AB4E600A9C4DD /* FirstViewController.swift */; };
@@ -18,17 +17,20 @@
 		93E344CA235AB4E900A9C4DD /* DollarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E344C9235AB4E900A9C4DD /* DollarTests.swift */; };
 		93E344D5235AB4E900A9C4DD /* DollarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E344D4235AB4E900A9C4DD /* DollarUITests.swift */; };
 		980AD84F2363EC58008A2424 /* BudgetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980AD84E2363EC58008A2424 /* BudgetTableViewController.swift */; };
-		980AD8512363F0C5008A2424 /* caricon.png in Resources */ = {isa = PBXBuildFile; fileRef = 980AD8502363F0C5008A2424 /* caricon.png */; };
+		986CF32B236A990D000B463C /* savings.png in Resources */ = {isa = PBXBuildFile; fileRef = 986CF323236A990C000B463C /* savings.png */; };
+		986CF32C236A990D000B463C /* spendings.png in Resources */ = {isa = PBXBuildFile; fileRef = 986CF324236A990C000B463C /* spendings.png */; };
+		986CF32D236A990D000B463C /* travel.png in Resources */ = {isa = PBXBuildFile; fileRef = 986CF325236A990C000B463C /* travel.png */; };
+		986CF32E236A990D000B463C /* target.png in Resources */ = {isa = PBXBuildFile; fileRef = 986CF326236A990C000B463C /* target.png */; };
+		986CF32F236A990D000B463C /* shopping.png in Resources */ = {isa = PBXBuildFile; fileRef = 986CF327236A990C000B463C /* shopping.png */; };
+		986CF330236A990D000B463C /* food.png in Resources */ = {isa = PBXBuildFile; fileRef = 986CF328236A990C000B463C /* food.png */; };
+		986CF331236A990D000B463C /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 986CF329236A990C000B463C /* home.png */; };
+		986CF332236A990D000B463C /* bills.png in Resources */ = {isa = PBXBuildFile; fileRef = 986CF32A236A990C000B463C /* bills.png */; };
+		986CF336236A9992000B463C /* coinbank.png in Resources */ = {isa = PBXBuildFile; fileRef = 986CF335236A9992000B463C /* coinbank.png */; };
+		986CF338236A9A58000B463C /* caricon.png in Resources */ = {isa = PBXBuildFile; fileRef = 986CF337236A9A58000B463C /* caricon.png */; };
+		986CF33C236A9E9B000B463C /* AddorEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986CF33B236A9E9B000B463C /* AddorEditTableViewController.swift */; };
+		986CF33E236AA1A3000B463C /* car.png in Resources */ = {isa = PBXBuildFile; fileRef = 986CF33D236AA1A2000B463C /* car.png */; };
 		988239FC236A712600654E1B /* SpendingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988239FB236A712600654E1B /* SpendingsTableViewController.swift */; };
 		988239FE236A7A8E00654E1B /* spendings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988239FD236A7A8E00654E1B /* spendings.swift */; };
-		98823A08236A7CD700654E1B /* piggy-bank.png in Resources */ = {isa = PBXBuildFile; fileRef = 98823A00236A7CD700654E1B /* piggy-bank.png */; };
-		98823A09236A7CD700654E1B /* iconmonstr-coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 98823A01236A7CD700654E1B /* iconmonstr-coin.png */; };
-		98823A0A236A7CD700654E1B /* iconmonstr-airport-1-240.png in Resources */ = {isa = PBXBuildFile; fileRef = 98823A02236A7CD700654E1B /* iconmonstr-airport-1-240.png */; };
-		98823A0B236A7CD700654E1B /* iconmonstr-target.png in Resources */ = {isa = PBXBuildFile; fileRef = 98823A03236A7CD700654E1B /* iconmonstr-target.png */; };
-		98823A0C236A7CD700654E1B /* iconmonstr-shoppingbag.png in Resources */ = {isa = PBXBuildFile; fileRef = 98823A04236A7CD700654E1B /* iconmonstr-shoppingbag.png */; };
-		98823A0D236A7CD700654E1B /* iconmonstr-forknknifepng.png in Resources */ = {isa = PBXBuildFile; fileRef = 98823A05236A7CD700654E1B /* iconmonstr-forknknifepng.png */; };
-		98823A0E236A7CD700654E1B /* iconmonstr-home.png in Resources */ = {isa = PBXBuildFile; fileRef = 98823A06236A7CD700654E1B /* iconmonstr-home.png */; };
-		98823A0F236A7CD700654E1B /* iconmonstr-connection-1-240.png in Resources */ = {isa = PBXBuildFile; fileRef = 98823A07236A7CD700654E1B /* iconmonstr-connection-1-240.png */; };
 		98F7CF9B23682DE500CD44DF /* monthlyBudget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F7CF9A23682DE500CD44DF /* monthlyBudget.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +52,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06AFC7CB2363F8D500C2A453 /* coinbank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coinbank.png; sourceTree = "<group>"; };
 		06AFC7CD2363FAA500C2A453 /* target icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "target icon.png"; sourceTree = "<group>"; };
 		93E344AF235AB4E600A9C4DD /* Dollar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dollar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93E344B2235AB4E600A9C4DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,17 +68,20 @@
 		93E344D4235AB4E900A9C4DD /* DollarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DollarUITests.swift; sourceTree = "<group>"; };
 		93E344D6235AB4E900A9C4DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		980AD84E2363EC58008A2424 /* BudgetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTableViewController.swift; sourceTree = "<group>"; };
-		980AD8502363F0C5008A2424 /* caricon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caricon.png; sourceTree = "<group>"; };
+		986CF323236A990C000B463C /* savings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = savings.png; sourceTree = "<group>"; };
+		986CF324236A990C000B463C /* spendings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spendings.png; sourceTree = "<group>"; };
+		986CF325236A990C000B463C /* travel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = travel.png; sourceTree = "<group>"; };
+		986CF326236A990C000B463C /* target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = target.png; sourceTree = "<group>"; };
+		986CF327236A990C000B463C /* shopping.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shopping.png; sourceTree = "<group>"; };
+		986CF328236A990C000B463C /* food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food.png; sourceTree = "<group>"; };
+		986CF329236A990C000B463C /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		986CF32A236A990C000B463C /* bills.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bills.png; sourceTree = "<group>"; };
+		986CF335236A9992000B463C /* coinbank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coinbank.png; sourceTree = "<group>"; };
+		986CF337236A9A58000B463C /* caricon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caricon.png; sourceTree = "<group>"; };
+		986CF33B236A9E9B000B463C /* AddorEditTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddorEditTableViewController.swift; sourceTree = "<group>"; };
+		986CF33D236AA1A2000B463C /* car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car.png; sourceTree = "<group>"; };
 		988239FB236A712600654E1B /* SpendingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingsTableViewController.swift; sourceTree = "<group>"; };
 		988239FD236A7A8E00654E1B /* spendings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spendings.swift; sourceTree = "<group>"; };
-		98823A00236A7CD700654E1B /* piggy-bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "piggy-bank.png"; sourceTree = "<group>"; };
-		98823A01236A7CD700654E1B /* iconmonstr-coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconmonstr-coin.png"; sourceTree = "<group>"; };
-		98823A02236A7CD700654E1B /* iconmonstr-airport-1-240.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconmonstr-airport-1-240.png"; sourceTree = "<group>"; };
-		98823A03236A7CD700654E1B /* iconmonstr-target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconmonstr-target.png"; sourceTree = "<group>"; };
-		98823A04236A7CD700654E1B /* iconmonstr-shoppingbag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconmonstr-shoppingbag.png"; sourceTree = "<group>"; };
-		98823A05236A7CD700654E1B /* iconmonstr-forknknifepng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconmonstr-forknknifepng.png"; sourceTree = "<group>"; };
-		98823A06236A7CD700654E1B /* iconmonstr-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconmonstr-home.png"; sourceTree = "<group>"; };
-		98823A07236A7CD700654E1B /* iconmonstr-connection-1-240.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconmonstr-connection-1-240.png"; sourceTree = "<group>"; };
 		98F7CF9A23682DE500CD44DF /* monthlyBudget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = monthlyBudget.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +133,7 @@
 		93E344B1235AB4E600A9C4DD /* Dollar */ = {
 			isa = PBXGroup;
 			children = (
+				986CF33B236A9E9B000B463C /* AddorEditTableViewController.swift */,
 				980AD84E2363EC58008A2424 /* BudgetTableViewController.swift */,
 				98F7CF9A23682DE500CD44DF /* monthlyBudget.swift */,
 				988239FB236A712600654E1B /* SpendingsTableViewController.swift */,
@@ -138,10 +143,10 @@
 				93E344B6235AB4E600A9C4DD /* SecondViewController.swift */,
 				93E344B8235AB4E600A9C4DD /* Main.storyboard */,
 				93E344BB235AB4E900A9C4DD /* Assets.xcassets */,
-				988239FF236A7CD700654E1B /* icons */,
+				986CF322236A990C000B463C /* icons */,
 				06AFC7CD2363FAA500C2A453 /* target icon.png */,
-				980AD8502363F0C5008A2424 /* caricon.png */,
-				06AFC7CB2363F8D500C2A453 /* coinbank.png */,
+				986CF337236A9A58000B463C /* caricon.png */,
+				986CF335236A9992000B463C /* coinbank.png */,
 				93E344BD235AB4E900A9C4DD /* LaunchScreen.storyboard */,
 				93E344C0235AB4E900A9C4DD /* Info.plist */,
 			);
@@ -166,17 +171,18 @@
 			path = DollarUITests;
 			sourceTree = "<group>";
 		};
-		988239FF236A7CD700654E1B /* icons */ = {
+		986CF322236A990C000B463C /* icons */ = {
 			isa = PBXGroup;
 			children = (
-				98823A00236A7CD700654E1B /* piggy-bank.png */,
-				98823A01236A7CD700654E1B /* iconmonstr-coin.png */,
-				98823A02236A7CD700654E1B /* iconmonstr-airport-1-240.png */,
-				98823A03236A7CD700654E1B /* iconmonstr-target.png */,
-				98823A04236A7CD700654E1B /* iconmonstr-shoppingbag.png */,
-				98823A05236A7CD700654E1B /* iconmonstr-forknknifepng.png */,
-				98823A06236A7CD700654E1B /* iconmonstr-home.png */,
-				98823A07236A7CD700654E1B /* iconmonstr-connection-1-240.png */,
+				986CF323236A990C000B463C /* savings.png */,
+				986CF324236A990C000B463C /* spendings.png */,
+				986CF325236A990C000B463C /* travel.png */,
+				986CF326236A990C000B463C /* target.png */,
+				986CF327236A990C000B463C /* shopping.png */,
+				986CF328236A990C000B463C /* food.png */,
+				986CF329236A990C000B463C /* home.png */,
+				986CF32A236A990C000B463C /* bills.png */,
+				986CF33D236AA1A2000B463C /* car.png */,
 			);
 			path = icons;
 			sourceTree = "<group>";
@@ -285,19 +291,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98823A09236A7CD700654E1B /* iconmonstr-coin.png in Resources */,
+				986CF332236A990D000B463C /* bills.png in Resources */,
 				93E344BF235AB4E900A9C4DD /* LaunchScreen.storyboard in Resources */,
-				98823A0D236A7CD700654E1B /* iconmonstr-forknknifepng.png in Resources */,
-				98823A0A236A7CD700654E1B /* iconmonstr-airport-1-240.png in Resources */,
+				986CF32D236A990D000B463C /* travel.png in Resources */,
+				986CF32F236A990D000B463C /* shopping.png in Resources */,
+				986CF330236A990D000B463C /* food.png in Resources */,
 				93E344BC235AB4E900A9C4DD /* Assets.xcassets in Resources */,
-				98823A0C236A7CD700654E1B /* iconmonstr-shoppingbag.png in Resources */,
-				98823A08236A7CD700654E1B /* piggy-bank.png in Resources */,
+				986CF338236A9A58000B463C /* caricon.png in Resources */,
+				986CF336236A9992000B463C /* coinbank.png in Resources */,
+				986CF32E236A990D000B463C /* target.png in Resources */,
 				06AFC7CE2363FAA500C2A453 /* target icon.png in Resources */,
-				98823A0F236A7CD700654E1B /* iconmonstr-connection-1-240.png in Resources */,
-				98823A0E236A7CD700654E1B /* iconmonstr-home.png in Resources */,
-				980AD8512363F0C5008A2424 /* caricon.png in Resources */,
-				06AFC7CC2363F8D500C2A453 /* coinbank.png in Resources */,
-				98823A0B236A7CD700654E1B /* iconmonstr-target.png in Resources */,
+				986CF32C236A990D000B463C /* spendings.png in Resources */,
+				986CF331236A990D000B463C /* home.png in Resources */,
+				986CF33E236AA1A3000B463C /* car.png in Resources */,
+				986CF32B236A990D000B463C /* savings.png in Resources */,
 				93E344BA235AB4E600A9C4DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,6 +334,7 @@
 				988239FE236A7A8E00654E1B /* spendings.swift in Sources */,
 				93E344B7235AB4E600A9C4DD /* SecondViewController.swift in Sources */,
 				93E344B3235AB4E600A9C4DD /* AppDelegate.swift in Sources */,
+				986CF33C236A9E9B000B463C /* AddorEditTableViewController.swift in Sources */,
 				93E344B5235AB4E600A9C4DD /* FirstViewController.swift in Sources */,
 				98F7CF9B23682DE500CD44DF /* monthlyBudget.swift in Sources */,
 				988239FC236A712600654E1B /* SpendingsTableViewController.swift in Sources */,

@@ -1,25 +1,15 @@
 //
-//  BudgetTableViewController.swift
+//  AddorEditTableViewController.swift
 //  Dollar
 //
-//  Created by Adeena Ansari on 26/10/19.
+//  Created by Adeena Ansari on 31/10/19.
 //  Copyright © 2019 cuzwhynot. All rights reserved.
 //
 
 import UIKit
 
-class BudgetTableViewController: UITableViewController {
+class AddorEditTableViewController: UITableViewController {
 
-    @IBOutlet weak var plusButton: UIBarButtonItem!
-    
-    var budget = [
-        monthlyBudget(category: "Transport", imageFileName: "car"),
-        monthlyBudget(category: "Food", imageFileName: "food"),
-        monthlyBudget(category: "Savings", imageFileName: "savings"),
-        monthlyBudget(category: "Bills", imageFileName: "bills"),
-        monthlyBudget(category: "Holiday", imageFileName: "travel")
-    ]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,34 +22,25 @@ class BudgetTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    
-    @IBAction func barButtonPressed(_ sender: Any) {
-        
-        
-    }
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return budget.count
+        return 0
     }
 
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "budgetCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
-        let monthlyBudget = budget[indexPath.row]
-        cell.textLabel?.text = monthlyBudget.category
-        cell.imageView?.image = UIImage(named: monthlyBudget.imageFileName)
 
         return cell
     }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -69,27 +50,24 @@ class BudgetTableViewController: UITableViewController {
     }
     */
 
-   
+    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            budget.remove(at: indexPath.row)
+            // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    
+    */
 
-    
+    /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-        let monthlyBudget = budget.remove(at: fromIndexPath.row)
-        budget.insert(monthlyBudget, at: to.row)
-        tableView.reloadData()
 
     }
-    
+    */
 
     /*
     // Override to support conditional rearranging of the table view.
@@ -99,14 +77,23 @@ class BudgetTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "addBudget",
+            let destVC = segue.destination as? BudgetTableViewController,
+            let indexPath = tableView.indexPathForSelectedRow {
+            destVC.budgets = budget[indexPath.row]
+        }
     }
-    */
+    @IBAction func unwindToBudgetTable(segue: UIStoryboardSegue){
+        
+    }
 
 }
+
+ 
+

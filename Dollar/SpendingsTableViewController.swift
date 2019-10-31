@@ -11,12 +11,11 @@ import UIKit
 class SpendingsTableViewController: UITableViewController {
     
     var dailySpendings = [
-        spendings(category: "Transport", imageFileName: "caricon"),
-        spendings(category: "Food", imageFileName: ""),
-        spendings(category: "Savings", imageFileName: "coinbank"),
-        spendings(category: "Bills", imageFileName: ""),
-        spendings(category: "Tickets", imageFileName: ""),
-        spendings(category: "Holiday", imageFileName: "")
+        spendings(category: "Transport", imageFileName: "car"),
+        spendings(category: "Food", imageFileName: "food"),
+        spendings(category: "Savings", imageFileName: "savings"),
+        spendings(category: "Bills", imageFileName: "bills"),
+        spendings(category: "Holiday", imageFileName: "travel")
     ]
 
     override func viewDidLoad() {
