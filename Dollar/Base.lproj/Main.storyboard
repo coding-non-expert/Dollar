@@ -268,6 +268,20 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xll-5y-tgf" id="Tpl-g3-PgF">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7c3-dJ-jpj">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="7c3-dJ-jpj" secondAttribute="bottom" id="CDl-NX-Wcl"/>
+                                                <constraint firstItem="7c3-dJ-jpj" firstAttribute="top" secondItem="Tpl-g3-PgF" secondAttribute="top" id="UBF-nZ-iMe"/>
+                                                <constraint firstItem="7c3-dJ-jpj" firstAttribute="leading" secondItem="Tpl-g3-PgF" secondAttribute="leading" id="axZ-NJ-Hah"/>
+                                                <constraint firstAttribute="trailing" secondItem="7c3-dJ-jpj" secondAttribute="trailing" id="mhG-sJ-URF"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -281,6 +295,11 @@
                     <navigationItem key="navigationItem" title="Add or Edit" id="QzD-kJ-M1M">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="WtW-wv-PC6"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="budgetTextField" destination="7c3-dJ-jpj" id="zih-hn-Pns"/>
+                        <outlet property="categoryTextfield" destination="OdU-zQ-hSQ" id="UDN-pJ-Iks"/>
+                        <outlet property="iconTextField" destination="nWH-fu-n1f" id="8dz-cf-phn"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M3x-22-cMV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

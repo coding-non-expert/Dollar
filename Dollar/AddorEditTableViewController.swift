@@ -10,8 +10,15 @@ import UIKit
 
 class AddorEditTableViewController: UITableViewController {
 
+    var budget: monthlyBudget!
+    @IBOutlet weak var categoryTextfield: UITextField!
+    @IBOutlet weak var iconTextField: UITextField!
+    @IBOutlet weak var budgetTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        iconTextField.image = UIImage(named: budget.imageView)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

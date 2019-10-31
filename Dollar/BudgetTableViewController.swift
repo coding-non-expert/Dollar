@@ -13,11 +13,11 @@ class BudgetTableViewController: UITableViewController {
     @IBOutlet weak var plusButton: UIBarButtonItem!
     
     var budget = [
-        monthlyBudget(category: "Transport", imageFileName: "car"),
-        monthlyBudget(category: "Food", imageFileName: "food"),
-        monthlyBudget(category: "Savings", imageFileName: "savings"),
-        monthlyBudget(category: "Bills", imageFileName: "bills"),
-        monthlyBudget(category: "Holiday", imageFileName: "travel")
+        monthlyBudget(category: "Transport", imageFileName: "car", budget: 0),
+        monthlyBudget(category: "Food", imageFileName: "food", budget: 0),
+        monthlyBudget(category: "Savings", imageFileName: "savings", budget: 0),
+        monthlyBudget(category: "Bills", imageFileName: "bills", budget: 0),
+        monthlyBudget(category: "Holiday", imageFileName: "travel", budget: 0)
     ]
     
     override func viewDidLoad() {
