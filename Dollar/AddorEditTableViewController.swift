@@ -10,7 +10,7 @@ import UIKit
 
 class AddorEditTableViewController: UITableViewController {
 
-    var budget: monthlyBudget!
+    var budget: Budget!
     var needBudget = true
     
     @IBOutlet weak var categoryTextfield: UITextField!
@@ -29,16 +29,16 @@ class AddorEditTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
+//
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
+//
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return 0
+//    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -94,16 +94,15 @@ class AddorEditTableViewController: UITableViewController {
         if segue.identifier == "addBudget"{
             let category = categoryTextfield.text ?? ""
             let imageFileName = iconTextField.text ?? ""
-            let budget = budgetTextField.text ?? ""
+            let budgetName = Int(budgetTextField.text ?? "") ?? 0
             
-            if budget == nil {
-                budget = monthlyBudget(category: category, imageFileName: imageFileName, budget: budget)
-                needBudget = true
+            
+            if needBudget == true {
+                budget = Budget(category: category, imageFileName: imageFileName, budget: budgetName)
             } else {
                 budget.category = category
                 budget.imageFileName = imageFileName
-                budget.budget = budget
-                needBudget = false
+                budget.budget = budgetName
             }
         }
             /*let destVC = segue.destination as? BudgetTableViewController,
@@ -116,10 +115,7 @@ class AddorEditTableViewController: UITableViewController {
 
         
     }
-    @IBAction func unwindToBudgetTable(segue: UIStoryboardSegue){
-        
-    }
-
+    
 }
 
  

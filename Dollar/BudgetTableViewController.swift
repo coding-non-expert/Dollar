@@ -13,21 +13,23 @@ class BudgetTableViewController: UITableViewController {
     @IBOutlet weak var plusButton: UIBarButtonItem!
     
     var budget = [
-        monthlyBudget(category: "Transport", imageFileName: "car", budget: 0),
-        monthlyBudget(category: "Food", imageFileName: "food", budget: 0),
-        monthlyBudget(category: "Savings", imageFileName: "savings", budget: 0),
-        monthlyBudget(category: "Bills", imageFileName: "bills", budget: 0),
-        monthlyBudget(category: "Holiday", imageFileName: "travel", budget: 0)
+        Budget(category: "Transport", imageFileName: "car", budget: 0),
+        Budget(category: "Food", imageFileName: "food", budget: 0),
+        Budget(category: "Savings", imageFileName: "savings", budget: 0),
+        Budget(category: "Bills", imageFileName: "bills", budget: 0),
+        Budget(category: "Holiday", imageFileName: "travel", budget: 0)
     ]
+    var overallMoney = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let loadedBudget = Budget.loadFromFile(){
+            budget = loadedBudget
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -45,21 +47,40 @@ class BudgetTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return budget.count
+        return (budget.count+1)
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "budgetCell", for: indexPath)
+        if let cell = cell as? BudgetTableViewCell {
+            if indexPath.row < budget.count {
+                let monthlyBudget = budget[indexPath.row]
+                cell.categoryLabel?.text = monthlyBudget.category
+                cell.iconImage?.image = UIImage(named: monthlyBudget.imageFileName)
+                cell.budgetLabel?.text = "\(monthlyBudget.budget)"
+            } else {
+                cell.categoryLabel.text = "Overall"
+                overallMoney = 0
+                for element in budget {
+                    overallMoney += element.budget
+                }
+                cell.budgetLabel.text = "\(overallMoney)"
+            }
+        }
+//
+//        let otherCell = tableView.dequeueReusableCell(withIdentifier: "overallBudget", for: indexPath)
+//        if let otherCell = cell as? BudgetTableViewCell {
+//            otherCell.overallBudgetLabel.text = "ahh"
 
+        
         // Configure the cell...
-        let monthlyBudget = budget[indexPath.row]
-        cell.textLabel?.text = monthlyBudget.category
-        cell.imageView?.image = UIImage(named: monthlyBudget.imageFileName)
-
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -73,8 +94,11 @@ class BudgetTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            budget.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            if indexPath.row < budget.count {
+                budget.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                Budget.saveToFile(budgets: budget)
+            }
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
@@ -89,6 +113,16 @@ class BudgetTableViewController: UITableViewController {
         tableView.reloadData()
 
     }
+    
+    
+    @IBAction func unwindToBudgetTable(segue: UIStoryboardSegue){
+        if segue.identifier == "addBudget", let source = segue.source as? AddorEditTableViewController {
+            budget.append(source.budget)
+            Budget.saveToFile(budgets: budget)
+            tableView.reloadData()
+        }
+    }
+
     
 
     /*
