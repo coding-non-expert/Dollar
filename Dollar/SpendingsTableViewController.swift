@@ -10,22 +10,18 @@ import UIKit
 
 class SpendingsTableViewController: UITableViewController {
     
-    var dailySpendings = [
-        spendings(category: "Transport", imageFileName: "car", spending: 0),
-        spendings(category: "Food", imageFileName: "food", spending: 0),
-        spendings(category: "Savings", imageFileName: "savings", spending: 0),
-        spendings(category: "Bills", imageFileName: "bills", spending: 0),
-        spendings(category: "Holiday", imageFileName: "travel", spending: 0)
-    ]
+    var spending: [Budget] = Budget.loadFromFile() ?? Budget.loadSampleData()
+    var sspending: [Spending]
+    
+    var overallSpending = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+        spending = Budget.loadFromFile() ?? Budget.loadSampleData()
     }
 
     // MARK: - Table view data source
@@ -37,16 +33,29 @@ class SpendingsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return dailySpendings.count
+        return (spending.count+1)
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        Budget.loadFromFile()
         let cell = tableView.dequeueReusableCell(withIdentifier: "spendingsCell", for: indexPath)
-
-        let spendings = dailySpendings[indexPath.row]
-        cell.textLabel?.text = spendings.category
-        cell.imageView?.image = UIImage(named: spendings.imageFileName)
+        if let cell = cell as? SpendingsTableViewCell {
+            if indexPath.row < spending.count {
+                let spendings = spending[indexPath.row]
+                cell.categoryLabel?.text = spendings.category
+                cell.iconImage?.image = UIImage(named: spendings.imageFileName)
+                cell.spendingField?.text = ""
+            }else{
+                cell.categoryLabel.text = "Overall"
+                overallSpending = 0
+                for element in spending {
+                    overallSpending += element.spending
+                }
+                cell.iconImage?.image = nil
+                cell.spendingField.text = "\(overallSpending)"
+            }
+        }
 
         return cell
     }
@@ -59,27 +68,30 @@ class SpendingsTableViewController: UITableViewController {
         return true
     }
     */
-
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            dailySpendings.remove(at: indexPath.row)
+            spending.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            Budget.saveToFile(budgets: spending)
+            tableView.reloadData()
         } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            sspending.append(source.spending)
+            Spending.saveToFile(spendings: sspending)
+            tableView.reloadData()
         }
     }
     
 
     
     // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-        let spendings = dailySpendings.remove(at: fromIndexPath.row)
-        dailySpendings.insert(spendings, at: to.row)
+    /*override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+        let spendings = spending.remove(at: fromIndexPath.row)
+        spending.insert(spendings, at: to.row)
         tableView.reloadData()
         
-    }
+    }*/
     
 
     /*
@@ -99,5 +111,6 @@ class SpendingsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
 
 }

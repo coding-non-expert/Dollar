@@ -11,25 +11,22 @@ import UIKit
 class BudgetTableViewController: UITableViewController {
 
     @IBOutlet weak var plusButton: UIBarButtonItem!
+    @IBOutlet weak var editButton: UIBarButtonItem!
     
-    var budget = [
-        Budget(category: "Transport", imageFileName: "car", budget: 0),
-        Budget(category: "Food", imageFileName: "food", budget: 0),
-        Budget(category: "Savings", imageFileName: "savings", budget: 0),
-        Budget(category: "Bills", imageFileName: "bills", budget: 0),
-        Budget(category: "Holiday", imageFileName: "travel", budget: 0)
-    ]
+    var budget = Budget.loadSampleData()
+    
     var overallMoney = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
+        
         if let loadedBudget = Budget.loadFromFile(){
             budget = loadedBudget
+        }else{
+            budget = Budget.loadSampleData()
         }
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        //self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -65,6 +62,7 @@ class BudgetTableViewController: UITableViewController {
                 for element in budget {
                     overallMoney += element.budget
                 }
+                cell.iconImage?.image = nil
                 cell.budgetLabel.text = "\(overallMoney)"
             }
         }
@@ -98,6 +96,7 @@ class BudgetTableViewController: UITableViewController {
                 budget.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
                 Budget.saveToFile(budgets: budget)
+                tableView.reloadData()
             }
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -108,10 +107,16 @@ class BudgetTableViewController: UITableViewController {
     
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-        let monthlyBudget = budget.remove(at: fromIndexPath.row)
-        budget.insert(monthlyBudget, at: to.row)
-        tableView.reloadData()
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "budgetCell", for: fromIndexPath)
+        if let cell = cell as? BudgetTableViewCell {
+            if fromIndexPath.row < budget.count {
+                let monthlyBudget = budget.remove(at: fromIndexPath.row)
+                budget.insert(monthlyBudget, at: to.row)
+                tableView.reloadData()
+            } else {
+                tableView.reloadData()
+            }
+        }
     }
     
     
