@@ -9,12 +9,12 @@
 import UIKit
 
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController{
 
     @IBOutlet weak var homeNameLabel: UILabel!
     @IBOutlet weak var popUpButton: UIButton!
   
-    var budget = Budget.loadSampleData()
+    var budgetArray: [Budget] = Budget.loadFromFile() ?? Budget.loadSampleData()
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -58,14 +58,46 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //self.applyRoundCorner(popUpButton)
+    
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         if let loadedBudget = Budget.loadFromFile(){
-            budget = loadedBudget
+            budgetArray = loadedBudget
         }else{
-            budget = Budget.loadSampleData()
+            budgetArray = Budget.loadSampleData()
         }
-        
-        self.applyRoundCorner(popUpButton)
-        
+    }
+
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return budgetArray.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let loadedDailyBudget = Budget.loadFromFile() {
+            budgetArray = loadedDailyBudget
+        } else {
+            budgetArray = Budget.loadSampleData()
+        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "dailyBudgetCell", for: indexPath)
+        if let cell = cell as? FirstTableViewCell {
+            let currentDailyBudget = budgetArray[indexPath.row]
+            cell.firstCategoryLabel?.text = currentDailyBudget.category
+            cell.firstIconImage?.image = UIImage(named: currentDailyBudget.imageFileName)
+            cell.firstBudgetLabel?.text = "\(currentDailyBudget.spending)"
+            }
+
+        return cell
+
     }
 
     func applyRoundCorner(_ object:AnyObject){
@@ -73,13 +105,16 @@ class FirstViewController: UIViewController {
         object.layer.masksToBounds = true
     }
 
-    @IBAction func popUpButtonPressed(_ sender: Any) {
+        
+        
+    /*@IBAction func popUpButtonPressed(_ sender: Any) {
         let alertController = UIAlertController(title: "Want to know how your daily budget is calculated?", message: "Dollar divides the monthly budget by the number of days in the month to give you your daily budget.", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
         self.present(alertController, animated: true, completion: nil)
-    }
+    }*/
     
     
     
 }
+
 
