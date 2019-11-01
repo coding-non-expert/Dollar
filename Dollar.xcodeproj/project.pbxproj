@@ -23,6 +23,9 @@
 		93E344D5235AB4E900A9C4DD /* DollarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E344D4235AB4E900A9C4DD /* DollarUITests.swift */; };
 		980AD84F2363EC58008A2424 /* BudgetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980AD84E2363EC58008A2424 /* BudgetTableViewController.swift */; };
 		9829A4AD236BF3F700C63486 /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9829A4AC236BF3F700C63486 /* FirstTableViewCell.swift */; };
+		9829A4AF236C20EB00C63486 /* SavingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9829A4AE236C20EB00C63486 /* SavingsViewController.swift */; };
+		9829A4B1236C23E400C63486 /* CongratsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9829A4B0236C23E400C63486 /* CongratsViewController.swift */; };
+		9829A4B3236C240400C63486 /* FailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9829A4B2236C240400C63486 /* FailedViewController.swift */; };
 		986CF32B236A990D000B463C /* savings.png in Resources */ = {isa = PBXBuildFile; fileRef = 986CF323236A990C000B463C /* savings.png */; };
 		986CF32C236A990D000B463C /* spendings.png in Resources */ = {isa = PBXBuildFile; fileRef = 986CF324236A990C000B463C /* spendings.png */; };
 		986CF32D236A990D000B463C /* travel.png in Resources */ = {isa = PBXBuildFile; fileRef = 986CF325236A990C000B463C /* travel.png */; };
@@ -78,6 +81,9 @@
 		93E344D6235AB4E900A9C4DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		980AD84E2363EC58008A2424 /* BudgetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTableViewController.swift; sourceTree = "<group>"; };
 		9829A4AC236BF3F700C63486 /* FirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
+		9829A4AE236C20EB00C63486 /* SavingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsViewController.swift; sourceTree = "<group>"; };
+		9829A4B0236C23E400C63486 /* CongratsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratsViewController.swift; sourceTree = "<group>"; };
+		9829A4B2236C240400C63486 /* FailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedViewController.swift; sourceTree = "<group>"; };
 		986CF323236A990C000B463C /* savings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = savings.png; sourceTree = "<group>"; };
 		986CF324236A990C000B463C /* spendings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spendings.png; sourceTree = "<group>"; };
 		986CF325236A990C000B463C /* travel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = travel.png; sourceTree = "<group>"; };
@@ -151,7 +157,10 @@
 				93E344B4235AB4E600A9C4DD /* FirstViewController.swift */,
 				9829A4AC236BF3F700C63486 /* FirstTableViewCell.swift */,
 				93E344B6235AB4E600A9C4DD /* SecondViewController.swift */,
+				9829A4AE236C20EB00C63486 /* SavingsViewController.swift */,
 				93E344B8235AB4E600A9C4DD /* Main.storyboard */,
+				9829A4B0236C23E400C63486 /* CongratsViewController.swift */,
+				9829A4B2236C240400C63486 /* FailedViewController.swift */,
 				93426946236C06FC006B9A63 /* OverallSpendingTableViewCell.swift */,
 				93E344BB235AB4E900A9C4DD /* Assets.xcassets */,
 				93426942236AA6EA006B9A63 /* dollar icon.png */,
@@ -343,15 +352,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9829A4AF236C20EB00C63486 /* SavingsViewController.swift in Sources */,
 				980AD84F2363EC58008A2424 /* BudgetTableViewController.swift in Sources */,
 				93E344B7235AB4E600A9C4DD /* SecondViewController.swift in Sources */,
 				9829A4AD236BF3F700C63486 /* FirstTableViewCell.swift in Sources */,
 				93E344B3235AB4E600A9C4DD /* AppDelegate.swift in Sources */,
+				9829A4B1236C23E400C63486 /* CongratsViewController.swift in Sources */,
 				986CF33C236A9E9B000B463C /* AddorEditTableViewController.swift in Sources */,
 				06A26C7F236BC81B00993F34 /* SpendingsTableViewCell.swift in Sources */,
 				93E344B5235AB4E600A9C4DD /* FirstViewController.swift in Sources */,
 				0656E29B236AD3D300A8B901 /* Dollar.swift in Sources */,
 				988239FC236A712600654E1B /* SpendingsTableViewController.swift in Sources */,
+				9829A4B3236C240400C63486 /* FailedViewController.swift in Sources */,
 				0656E297236ACD7B00A8B901 /* BudgetTableViewCell.swift in Sources */,
 				93426947236C06FC006B9A63 /* OverallSpendingTableViewCell.swift in Sources */,
 			);

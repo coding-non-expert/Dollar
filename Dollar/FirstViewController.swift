@@ -15,9 +15,7 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var popUpButton: UIButton!
   
     var budget = Budget.loadSampleData()
-    
 
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -80,5 +78,8 @@ class FirstViewController: UIViewController {
         alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    
+    
 }
 
