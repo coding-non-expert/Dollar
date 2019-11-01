@@ -8,12 +8,23 @@
 
 import UIKit
 
-class SpendingsTableViewController: UITableViewController {
+class SpendingsTableViewController: UITableViewController, SpendingCellDelegate {
     
-    @IBOutlet weak var saveButton: UIBarButtonItem!
+    func textFieldClicked(id: String, money: Int) {
+        overallSpending = 0
+        for (index, currentRow) in spendingArray.enumerated() {
+            if currentRow.id == id {
+                spendingArray[index].spending = money
+                print("\(currentRow.category): \(spendingArray[index].spending)" )
+            }
+        }
+        Budget.saveToFile(budgets: spendingArray)
+        tableView.reloadData()
+    }
     
-    var spending: [Budget] = Budget.loadFromFile() ?? Budget.loadSampleData()
-    var sspending: [Spending] = []
+    
+    var spendingArray: [Budget] = Budget.loadFromFile() ?? Budget.loadSampleData()
+//    var sspending: [Spending] = []
     
     var overallSpending = 0
 
@@ -23,7 +34,13 @@ class SpendingsTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
-        spending = Budget.loadFromFile() ?? Budget.loadSampleData()
+        if let loadedSpending = Budget.loadFromFile() {
+            spendingArray = loadedSpending
+        } else {
+            spendingArray = Budget.loadSampleData()
+        }
+        tableView.reloadData()
+        
     }
 
     // MARK: - Table view data source
@@ -35,43 +52,40 @@ class SpendingsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return spending.count + 1
+        return spendingArray.count + 1
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        Budget.loadFromFile()
-        if indexPath.row < spending.count {
+        if let loadedSpending = Budget.loadFromFile() {
+            spendingArray = loadedSpending
+        } else {
+            spendingArray = Budget.loadSampleData()
+        }
+        if indexPath.row < spendingArray.count {
             let cell1 = tableView.dequeueReusableCell(withIdentifier: "spendingsCell", for: indexPath)
             if let cell1 = cell1 as? SpendingsTableViewCell {
-                let spendings = spending[indexPath.row]
-                cell1.categoryLabel?.text = spendings.category
-                cell1.iconImage?.image = UIImage(named: spendings.imageFileName)
-                cell1.spendingField?.text = ""
+                let currentSpending = spendingArray[indexPath.row]
+                cell1.categoryLabel?.text = currentSpending.category
+                cell1.iconImage?.image = UIImage(named: currentSpending.imageFileName)
+                cell1.spendingField?.text = "\(currentSpending.spending)"
+                cell1.delegate = self
+                cell1.id = currentSpending.id
             }
             return cell1
         } else {
             let cell2 = tableView.dequeueReusableCell(withIdentifier: "overallSpendingCell", for: indexPath)
-            if let cell2 = cell2 as? SpendingsTableViewCell {
-                cell2.overallSpendingLabel.text = "Overall"
-                for element in spending {
+            if let cell2 = cell2 as? OverallSpendingTableViewCell {
+//                cell2.overallSpendingLabel.text = "Overall"
+                for element in spendingArray {
                     overallSpending += element.spending
                 }
-                cell2.iconImage?.image = nil
                 cell2.overallSpendingsLabel.text = "\(overallSpending)"
             }
             return cell2
         }
-    
     }
     
-    @IBAction func SaveButtonPressed(_ sender: Any) {
-        for element in sspending {
-            Spending.saveToFile(spendings: sspending)
-        }
-        sspending = Spending.loadFromFile() ?? []
-        tableView.reloadData()
-    }
     
     /*
     // Override to support conditional editing of the table view.

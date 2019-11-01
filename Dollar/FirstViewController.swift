@@ -17,12 +17,17 @@ class FirstViewController: UIViewController {
     var budget = Budget.loadSampleData()
     
 
-    /*
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         // Might want to check userDefaults here to see if a name has been set
         // If it has... no need to run the code below!
+        
+        let defaults = UserDefaults.standard
+        if let uname = defaults.string(forKey: "name") {
+           // self.homeNameLabel.text = alertText
+            return
         
         let alert = UIAlertController(title: "Hi! I'm DOLLAR! What's your name?", message: "", preferredStyle: .alert)
         
@@ -33,10 +38,11 @@ class FirstViewController: UIViewController {
         // OK action asks for the text from the alert's first text field
         let okAction = UIAlertAction(title: "Save", style: .default) { (action) in
             if let textField = alert.textFields?.first,
-                let text = textField.text {
-                print(text)
-                self.homeNameLabel.text = "\(text)"
-                // Your job is to save here
+                let alertText = textField.text {
+                print(alertText)
+                self.homeNameLabel.text = alertText
+                let defaults = UserDefaults.standard
+                defaults.set(uname, forKey: "name")
             }
         }
         alert.addAction(okAction)
@@ -47,8 +53,10 @@ class FirstViewController: UIViewController {
         }
         
         present(alert, animated: true)
+        
+        }
     }
-*/
+
     override func viewDidLoad() {
         super.viewDidLoad()
         

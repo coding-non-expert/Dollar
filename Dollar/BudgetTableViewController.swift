@@ -24,7 +24,7 @@ class BudgetTableViewController: UITableViewController {
         
         if let loadedBudget = Budget.loadFromFile(){
             budget = loadedBudget
-        }else{
+        } else{
             budget = Budget.loadSampleData()
         }
     }

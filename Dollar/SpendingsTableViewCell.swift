@@ -7,16 +7,22 @@
 //
 
 import UIKit
-
+protocol SpendingCellDelegate {
+    func textFieldClicked(id: String, money: Int)
+}
 class SpendingsTableViewCell: UITableViewCell {
 
     
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var spendingField: UITextField!
+    var id: String!
+    var delegate: SpendingCellDelegate!
     
-    @IBOutlet weak var overallSpendingLabel: UILabel!
-    @IBOutlet weak var overallSpendingsLabel: UILabel!
+    @IBAction func spendingTextField(_ sender: Any) {
+        print("wow!")
+        delegate.textFieldClicked(id: id, money: Int(spendingField.text ?? "") ?? 0)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
