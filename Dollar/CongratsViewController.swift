@@ -18,6 +18,11 @@ class CongratsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func tapped(_ sender: Any) {
+        performSegue(withIdentifier: "congratsClicked", sender: nil)
+    }
+    
+    
 
     /*
     // MARK: - Navigation

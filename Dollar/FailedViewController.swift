@@ -10,13 +10,18 @@ import UIKit
 
 class FailedViewController: UIViewController {
 
+    @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func tapped(_ sender: Any) {
+        performSegue(withIdentifier: "failedClicked", sender: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
