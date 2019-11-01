@@ -10,8 +10,10 @@ import UIKit
 
 class SpendingsTableViewController: UITableViewController {
     
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
     var spending: [Budget] = Budget.loadFromFile() ?? Budget.loadSampleData()
-    var sspending: [Spending]
+    var sspending: [Spending] = []
     
     var overallSpending = 0
 
@@ -33,34 +35,44 @@ class SpendingsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return (spending.count+1)
+        return spending.count + 1
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         Budget.loadFromFile()
-        let cell = tableView.dequeueReusableCell(withIdentifier: "spendingsCell", for: indexPath)
-        if let cell = cell as? SpendingsTableViewCell {
-            if indexPath.row < spending.count {
+        if indexPath.row < spending.count {
+            let cell1 = tableView.dequeueReusableCell(withIdentifier: "spendingsCell", for: indexPath)
+            if let cell1 = cell1 as? SpendingsTableViewCell {
                 let spendings = spending[indexPath.row]
-                cell.categoryLabel?.text = spendings.category
-                cell.iconImage?.image = UIImage(named: spendings.imageFileName)
-                cell.spendingField?.text = ""
-            }else{
-                cell.categoryLabel.text = "Overall"
-                overallSpending = 0
+                cell1.categoryLabel?.text = spendings.category
+                cell1.iconImage?.image = UIImage(named: spendings.imageFileName)
+                cell1.spendingField?.text = ""
+            }
+            return cell1
+        } else {
+            let cell2 = tableView.dequeueReusableCell(withIdentifier: "overallSpendingCell", for: indexPath)
+            if let cell2 = cell2 as? SpendingsTableViewCell {
+                cell2.overallSpendingLabel.text = "Overall"
                 for element in spending {
                     overallSpending += element.spending
                 }
-                cell.iconImage?.image = nil
-                cell.spendingField.text = "\(overallSpending)"
+                cell2.iconImage?.image = nil
+                cell2.overallSpendingsLabel.text = "\(overallSpending)"
             }
+            return cell2
         }
-
-        return cell
+    
     }
     
-
+    @IBAction func SaveButtonPressed(_ sender: Any) {
+        for element in sspending {
+            Spending.saveToFile(spendings: sspending)
+        }
+        sspending = Spending.loadFromFile() ?? []
+        tableView.reloadData()
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -68,7 +80,7 @@ class SpendingsTableViewController: UITableViewController {
         return true
     }
     */
-    
+    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -82,7 +94,7 @@ class SpendingsTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
-    
+    */
 
     
     // Override to support rearranging the table view.

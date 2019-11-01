@@ -15,6 +15,9 @@ class SpendingsTableViewCell: UITableViewCell {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var spendingField: UITextField!
     
+    @IBOutlet weak var overallSpendingLabel: UILabel!
+    @IBOutlet weak var overallSpendingsLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

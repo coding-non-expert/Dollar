@@ -21,6 +21,7 @@
 		93E344CA235AB4E900A9C4DD /* DollarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E344C9235AB4E900A9C4DD /* DollarTests.swift */; };
 		93E344D5235AB4E900A9C4DD /* DollarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E344D4235AB4E900A9C4DD /* DollarUITests.swift */; };
 		980AD84F2363EC58008A2424 /* BudgetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980AD84E2363EC58008A2424 /* BudgetTableViewController.swift */; };
+		9829A4AD236BF3F700C63486 /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9829A4AC236BF3F700C63486 /* FirstTableViewCell.swift */; };
 		986CF32B236A990D000B463C /* savings.png in Resources */ = {isa = PBXBuildFile; fileRef = 986CF323236A990C000B463C /* savings.png */; };
 		986CF32C236A990D000B463C /* spendings.png in Resources */ = {isa = PBXBuildFile; fileRef = 986CF324236A990C000B463C /* spendings.png */; };
 		986CF32D236A990D000B463C /* travel.png in Resources */ = {isa = PBXBuildFile; fileRef = 986CF325236A990C000B463C /* travel.png */; };
@@ -74,6 +75,7 @@
 		93E344D4235AB4E900A9C4DD /* DollarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DollarUITests.swift; sourceTree = "<group>"; };
 		93E344D6235AB4E900A9C4DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		980AD84E2363EC58008A2424 /* BudgetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTableViewController.swift; sourceTree = "<group>"; };
+		9829A4AC236BF3F700C63486 /* FirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
 		986CF323236A990C000B463C /* savings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = savings.png; sourceTree = "<group>"; };
 		986CF324236A990C000B463C /* spendings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spendings.png; sourceTree = "<group>"; };
 		986CF325236A990C000B463C /* travel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = travel.png; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				06A26C7E236BC81B00993F34 /* SpendingsTableViewCell.swift */,
 				93E344B2235AB4E600A9C4DD /* AppDelegate.swift */,
 				93E344B4235AB4E600A9C4DD /* FirstViewController.swift */,
+				9829A4AC236BF3F700C63486 /* FirstTableViewCell.swift */,
 				93E344B6235AB4E600A9C4DD /* SecondViewController.swift */,
 				93E344B8235AB4E600A9C4DD /* Main.storyboard */,
 				93E344BB235AB4E900A9C4DD /* Assets.xcassets */,
@@ -339,6 +342,7 @@
 			files = (
 				980AD84F2363EC58008A2424 /* BudgetTableViewController.swift in Sources */,
 				93E344B7235AB4E600A9C4DD /* SecondViewController.swift in Sources */,
+				9829A4AD236BF3F700C63486 /* FirstTableViewCell.swift in Sources */,
 				93E344B3235AB4E600A9C4DD /* AppDelegate.swift in Sources */,
 				986CF33C236A9E9B000B463C /* AddorEditTableViewController.swift in Sources */,
 				06A26C7F236BC81B00993F34 /* SpendingsTableViewCell.swift in Sources */,
