@@ -12,8 +12,7 @@ class BudgetTableViewCell: UITableViewCell {
 
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var categoryLabel: UILabel!
-    @IBOutlet weak var budgetLabel: UILabel!
-    
+    @IBOutlet weak var budgetLabel: UILabel!    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

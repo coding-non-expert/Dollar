@@ -55,7 +55,12 @@ class BudgetTableViewController: UITableViewController {
                 let monthlyBudget = budget[indexPath.row]
                 cell.categoryLabel?.text = monthlyBudget.category
                 cell.iconImage?.image = UIImage(named: monthlyBudget.imageFileName)
-                cell.budgetLabel?.text = "\(monthlyBudget.budget)"
+                let numberFormatter = NumberFormatter()
+                numberFormatter.minimumFractionDigits = 2
+                var numberBeforeFormat = (Double(round(100*monthlyBudget.budget)/100))
+                cell.budgetLabel?.text = numberFormatter.string(from: NSNumber(value: numberBeforeFormat))
+
+//                cell.budgetLabel?.text = "\(monthlyBudget.budget)"
             } else {
                 cell.categoryLabel.text = "Overall"
                 overallMoney = 0.0
@@ -63,7 +68,10 @@ class BudgetTableViewController: UITableViewController {
                     overallMoney += element.budget
                 }
                 cell.iconImage?.image = nil
-                cell.budgetLabel.text = "\((Double(round(100*overallMoney)/100)))"
+                let numberFormatter = NumberFormatter()
+                numberFormatter.minimumFractionDigits = 2
+                var numberBeforeFormat = (Double(round(100*overallMoney)/100))
+                cell.budgetLabel?.text = numberFormatter.string(from: NSNumber(value: numberBeforeFormat))
             }
         }
 //
