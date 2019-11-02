@@ -10,6 +10,7 @@
 		0656E297236ACD7B00A8B901 /* BudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0656E296236ACD7B00A8B901 /* BudgetTableViewCell.swift */; };
 		0656E29B236AD3D300A8B901 /* Dollar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0656E29A236AD3D300A8B901 /* Dollar.swift */; };
 		06A26C7F236BC81B00993F34 /* SpendingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A26C7E236BC81B00993F34 /* SpendingsTableViewCell.swift */; };
+		06DD5DEF236D3C400081AF5F /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DD5DEE236D3C400081AF5F /* TipsViewController.swift */; };
 		93426947236C06FC006B9A63 /* OverallSpendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93426946236C06FC006B9A63 /* OverallSpendingTableViewCell.swift */; };
 		93E344B3235AB4E600A9C4DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E344B2235AB4E600A9C4DD /* AppDelegate.swift */; };
 		93E344B5235AB4E600A9C4DD /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E344B4235AB4E600A9C4DD /* FirstViewController.swift */; };
@@ -49,6 +50,7 @@
 		0656E296236ACD7B00A8B901 /* BudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTableViewCell.swift; sourceTree = "<group>"; };
 		0656E29A236AD3D300A8B901 /* Dollar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dollar.swift; sourceTree = "<group>"; };
 		06A26C7E236BC81B00993F34 /* SpendingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingsTableViewCell.swift; sourceTree = "<group>"; };
+		06DD5DEE236D3C400081AF5F /* TipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
 		93426946236C06FC006B9A63 /* OverallSpendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverallSpendingTableViewCell.swift; sourceTree = "<group>"; };
 		93E344AF235AB4E600A9C4DD /* Dollar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dollar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93E344B2235AB4E600A9C4DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,11 +135,11 @@
 				93E344B6235AB4E600A9C4DD /* SecondViewController.swift */,
 				9829A4AE236C20EB00C63486 /* SavingsViewController.swift */,
 				93E344B8235AB4E600A9C4DD /* Main.storyboard */,
+				06DD5DEE236D3C400081AF5F /* TipsViewController.swift */,
 				9829A4B0236C23E400C63486 /* CongratsViewController.swift */,
 				9829A4B2236C240400C63486 /* FailedViewController.swift */,
 				93426946236C06FC006B9A63 /* OverallSpendingTableViewCell.swift */,
 				93E344BB235AB4E900A9C4DD /* Assets.xcassets */,
-				986CF322236A990C000B463C /* icons */,
 				93E344BD235AB4E900A9C4DD /* LaunchScreen.storyboard */,
 				93E344C0235AB4E900A9C4DD /* Info.plist */,
 			);
@@ -160,13 +162,6 @@
 				93E344D6235AB4E900A9C4DD /* Info.plist */,
 			);
 			path = DollarUITests;
-			sourceTree = "<group>";
-		};
-		986CF322236A990C000B463C /* icons */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +306,7 @@
 				93E344B5235AB4E600A9C4DD /* FirstViewController.swift in Sources */,
 				0656E29B236AD3D300A8B901 /* Dollar.swift in Sources */,
 				988239FC236A712600654E1B /* SpendingsTableViewController.swift in Sources */,
+				06DD5DEF236D3C400081AF5F /* TipsViewController.swift in Sources */,
 				9829A4B3236C240400C63486 /* FailedViewController.swift in Sources */,
 				0656E297236ACD7B00A8B901 /* BudgetTableViewCell.swift in Sources */,
 				93426947236C06FC006B9A63 /* OverallSpendingTableViewCell.swift in Sources */,

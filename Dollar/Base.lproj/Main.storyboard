@@ -639,20 +639,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You have used our app!!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eI-oJ-ZVw">
-                                <rect key="frame" x="20" y="220" width="189" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="D2r-Q4-n25"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Savings" image="savings" id="ajT-Xf-WDZ"/>
                     <connections>
-                        <outlet property="tipsLabel" destination="8eI-oJ-ZVw" id="s34-mM-UeY"/>
                         <segue destination="Jml-vE-FX5" kind="presentation" identifier="successCheck" id="Auu-5y-7CK"/>
                         <segue destination="w4T-AY-4nM" kind="presentation" identifier="failedCheck" id="2WF-8v-hnN"/>
                     </connections>
@@ -706,7 +698,7 @@
                 <tapGestureRecognizer id="HOb-iY-FKg">
                     <connections>
                         <action selector="tapped:" destination="Jml-vE-FX5" id="WXT-oX-1dE"/>
-                        <segue destination="xBx-pQ-IcG" kind="presentation" identifier="congratsClicked" id="MbO-wN-qkO"/>
+                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="congratsClicked" id="AhZ-5Z-t23"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -757,23 +749,58 @@
                 <tapGestureRecognizer id="7Cj-hc-Svh">
                     <connections>
                         <action selector="tapped:" destination="w4T-AY-4nM" id="mfO-uw-uh2"/>
-                        <segue destination="xBx-pQ-IcG" kind="presentation" identifier="failedClicked" id="Cta-pU-Ip3"/>
+                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="failedClicked" id="I50-qv-4Ey"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3557.971014492754" y="223.66071428571428"/>
         </scene>
-        <!--Summary-->
+        <!--Tips-->
         <scene sceneID="Yd6-kG-LEP">
             <objects>
-                <viewController id="KyH-RP-DMy" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="sM6-Vq-KiF">
+                <viewController id="KyH-RP-DMy" customClass="TipsViewController" customModule="Dollar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sM6-Vq-KiF" customClass="Tips">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lkD-FH-8yU">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="142"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.74117647060000003" blue="0.031372549020000001" alpha="0.60000002379999995" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gcz-kb-8O7">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="142"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.74117647060000003" blue="0.031372549020000001" alpha="0.60000002379999995" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tips" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nL0-on-Or6">
+                                <rect key="frame" x="20" y="78" width="152" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Make your own food instead of eating out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ne2-cG-oNd">
+                                <rect key="frame" x="20" y="187" width="316" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="S6z-jI-prf"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Summary" image="graphs" id="whp-1b-fQ9"/>
+                    <tabBarItem key="tabBarItem" title="Tips" image="tips" selectedImage="tips" id="whp-1b-fQ9"/>
+                    <connections>
+                        <outlet property="tipsLabel" destination="Ne2-cG-oNd" id="UbG-mR-MEz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HOd-GP-ssU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -802,13 +829,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="graphs" width="24" height="24"/>
         <image name="home" width="24" height="24"/>
         <image name="savings" width="24" height="24"/>
         <image name="spendings" width="24" height="24"/>
         <image name="target" width="24" height="24"/>
+        <image name="tips" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="X3L-ns-KEH"/>
+        <segue reference="I50-qv-4Ey"/>
     </inferredMetricsTieBreakers>
 </document>

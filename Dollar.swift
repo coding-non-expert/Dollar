@@ -55,6 +55,7 @@ class Budget: Codable {
     }
 
 }
+
 //
 //class Spending: Codable {
 //    var category: String

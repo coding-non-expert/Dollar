@@ -77,8 +77,11 @@ class SpendingsTableViewController: UITableViewController, SpendingCellDelegate 
             let cell2 = tableView.dequeueReusableCell(withIdentifier: "overallSpendingCell", for: indexPath)
             if let cell2 = cell2 as? OverallSpendingTableViewCell {
 //                cell2.overallSpendingLabel.text = "Overall"
+                overallSpending = 0.0
                 for element in spendingArray {
                     overallSpending += element.spending
+                let defaults = UserDefaults.standard
+                defaults.set(overallSpending, forKey: "totalSpending")
                 }
                 cell2.overallSpendingsLabel.text = "\(overallSpending)"
             }

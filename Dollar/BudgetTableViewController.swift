@@ -72,6 +72,8 @@ class BudgetTableViewController: UITableViewController {
                 numberFormatter.minimumFractionDigits = 2
                 var numberBeforeFormat = (Double(round(100*overallMoney)/100))
                 cell.budgetLabel?.text = numberFormatter.string(from: NSNumber(value: numberBeforeFormat))
+                let defaults = UserDefaults.standard
+                defaults.set(overallMoney, forKey: "totalBudget")
             }
         }
 //
