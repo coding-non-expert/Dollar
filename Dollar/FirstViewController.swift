@@ -66,11 +66,13 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
         if let loadedBudget = Budget.loadFromFile(){
             budgetArray = loadedBudget
         }else{
             budgetArray = Budget.loadSampleData()
         }
+        tableView.reloadData()
     }
 
     
@@ -96,7 +98,11 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let currentDailyBudget = budgetArray[indexPath.row]
             cell.firstCategoryLabel?.text = currentDailyBudget.category
             cell.firstIconImage?.image = UIImage(named: currentDailyBudget.imageFileName)
-            cell.firstBudgetLabel?.text = "\(currentDailyBudget.spending)"
+            let numberFormatter = NumberFormatter()
+            numberFormatter.minimumFractionDigits = 2
+            var numberBeforeFormat = (Double(round(100*(currentDailyBudget.budget / 30.0))/100))
+            cell.firstBudgetLabel?.text = numberFormatter.string(from: NSNumber(value: numberBeforeFormat))
+//            "\(Double(round(100*(currentDailyBudget.budget / 30.0))/100))"
             }
 
         return cell

@@ -10,8 +10,8 @@ import UIKit
 
 class SpendingsTableViewController: UITableViewController, SpendingCellDelegate {
     
-    func textFieldClicked(id: String, money: Int) {
-        overallSpending = 0
+    func textFieldClicked(id: String, money: Double) {
+        var overallSpending = 0.0
         for (index, currentRow) in spendingArray.enumerated() {
             if currentRow.id == id {
                 spendingArray[index].spending = money
@@ -26,7 +26,7 @@ class SpendingsTableViewController: UITableViewController, SpendingCellDelegate 
     var spendingArray: [Budget] = Budget.loadFromFile() ?? Budget.loadSampleData()
 //    var sspending: [Spending] = []
     
-    var overallSpending = 0
+    var overallSpending = 0.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,6 +86,11 @@ class SpendingsTableViewController: UITableViewController, SpendingCellDelegate 
         }
     }
     
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40
+    }
+
     
     /*
     // Override to support conditional editing of the table view.

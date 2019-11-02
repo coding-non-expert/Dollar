@@ -94,12 +94,12 @@ class AddorEditTableViewController: UITableViewController {
         if segue.identifier == "addBudget"{
             let category = categoryTextfield.text ?? ""
             let imageFileName = iconTextField.text ?? ""
-            let budgetName = Int(budgetTextField.text ?? "") ?? 0
-            let spendingName = 0
+            let budgetName = Double(budgetTextField.text ?? "") ?? 0
+            let spendingName = 0.0
             
             
             if needBudget == true {
-                budget = Budget(category: category, imageFileName: imageFileName, budget: budgetName, spending: spendingName)
+                budget = Budget(category: category, imageFileName: imageFileName, budget: budgetName, spending: Double(spendingName))
             } else {
                 budget.category = category
                 budget.imageFileName = imageFileName

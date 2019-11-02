@@ -11,11 +11,11 @@ import Foundation
 class Budget: Codable {
     var category: String
     var imageFileName: String
-    var budget: Int
-    var spending: Int
+    var budget: Double
+    var spending: Double
     var id: String
     
-    init (category: String, imageFileName: String, budget: Int, spending: Int){
+    init (category: String, imageFileName: String, budget: Double, spending: Double){
         self.category = category
         self.imageFileName = imageFileName
         self.budget = budget
@@ -25,11 +25,11 @@ class Budget: Codable {
 
     static func loadSampleData() -> [Budget]{
         return[
-            Budget(category: "Transport", imageFileName: "car", budget: 0, spending: 0),
-            Budget(category: "Food", imageFileName: "food", budget: 0, spending: 0),
-            Budget(category: "Savings", imageFileName: "savings", budget: 0, spending: 0),
-            Budget(category: "Bills", imageFileName: "bills", budget: 0, spending: 0),
-            Budget(category: "Holiday", imageFileName: "travel", budget: 0, spending: 0)
+            Budget(category: "Transport", imageFileName: "car", budget: 0.0, spending: 0.0),
+            Budget(category: "Food", imageFileName: "food", budget: 0.0, spending: 0.0),
+            Budget(category: "Savings", imageFileName: "savings", budget: 0.0, spending: 0.0),
+            Budget(category: "Bills", imageFileName: "bills", budget: 0.0, spending: 0.0),
+            Budget(category: "Holiday", imageFileName: "travel", budget: 0.0, spending: 0.0)
         ]
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 protocol SpendingCellDelegate {
-    func textFieldClicked(id: String, money: Int)
+    func textFieldClicked(id: String, money: Double)
 }
 class SpendingsTableViewCell: UITableViewCell {
 
@@ -21,7 +21,7 @@ class SpendingsTableViewCell: UITableViewCell {
     
     @IBAction func spendingTextField(_ sender: Any) {
         print("wow!")
-        delegate.textFieldClicked(id: id, money: Int(spendingField.text ?? "") ?? 0)
+        delegate.textFieldClicked(id: id, money: Double(spendingField.text ?? "") ?? 0.0)
     }
     
     override func awakeFromNib() {

@@ -15,7 +15,7 @@ class BudgetTableViewController: UITableViewController {
     
     var budget = Budget.loadSampleData()
     
-    var overallMoney = 0
+    var overallMoney = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,12 +58,12 @@ class BudgetTableViewController: UITableViewController {
                 cell.budgetLabel?.text = "\(monthlyBudget.budget)"
             } else {
                 cell.categoryLabel.text = "Overall"
-                overallMoney = 0
+                overallMoney = 0.0
                 for element in budget {
                     overallMoney += element.budget
                 }
                 cell.iconImage?.image = nil
-                cell.budgetLabel.text = "\(overallMoney)"
+                cell.budgetLabel.text = "\((Double(round(100*overallMoney)/100)))"
             }
         }
 //
