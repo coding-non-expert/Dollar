@@ -10,23 +10,23 @@ import UIKit
 
 class SavingsViewController: UIViewController {
     
-    var savings = 0
-    var spendings = 0
+    var savings = 0.0
+    var spendings = 0.0
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let defaults = UserDefaults.standard
-        savings = defaults.integer(forKey: "totalBudget")
-        spendings = defaults.integer(forKey: "totalSpending")
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        if savings > spendings {
+        savings = defaults.double(forKey: "totalBudget")
+        spendings = defaults.double(forKey: "totalSpending")
+        if savings < spendings {
             performSegue(withIdentifier: "failedCheck", sender: nil)
         } else {
             performSegue(withIdentifier: "successCheck", sender: nil)
         }
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
 
     /*
