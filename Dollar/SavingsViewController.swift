@@ -9,11 +9,17 @@
 import UIKit
 
 class SavingsViewController: UIViewController {
+    
+    var savings: Int = 2
+    var spendings: Int = 3
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if savings < spendings {
+            performSegue(withIdentifier: "failedCheck", sender: nil)
+        } else {
+            performSegue(withIdentifier: "successCheck", sender: nil)
+        }
     }
     
 

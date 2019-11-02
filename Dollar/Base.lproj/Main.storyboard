@@ -641,6 +641,10 @@
                         <viewLayoutGuide key="safeArea" id="D2r-Q4-n25"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="ajT-Xf-WDZ"/>
+                    <connections>
+                        <segue destination="Jml-vE-FX5" kind="presentation" identifier="successCheck" id="Auu-5y-7CK"/>
+                        <segue destination="w4T-AY-4nM" kind="presentation" identifier="failedCheck" id="2WF-8v-hnN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vh6-RY-QiX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -790,6 +794,6 @@
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MbO-wN-qkO"/>
+        <segue reference="Cta-pU-Ip3"/>
     </inferredMetricsTieBreakers>
 </document>
