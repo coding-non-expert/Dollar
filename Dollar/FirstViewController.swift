@@ -9,13 +9,15 @@
 import UIKit
 
 
-class FirstViewController: UIViewController{
+class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var homeNameLabel: UILabel!
     @IBOutlet weak var popUpButton: UIButton!
   
     var budgetArray: [Budget] = Budget.loadFromFile() ?? Budget.loadSampleData()
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -57,8 +59,9 @@ class FirstViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //self.applyRoundCorner(popUpButton)
+        tableView.dataSource = self
+        tableView.delegate = self
+        self.applyRoundCorner(popUpButton)
     
     }
     
@@ -107,11 +110,11 @@ class FirstViewController: UIViewController{
 
         
         
-    /*@IBAction func popUpButtonPressed(_ sender: Any) {
+    @IBAction func popUpButtonPressed(_ sender: Any) {
         let alertController = UIAlertController(title: "Want to know how your daily budget is calculated?", message: "Dollar divides the monthly budget by the number of days in the month to give you your daily budget.", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
         self.present(alertController, animated: true, completion: nil)
-    }*/
+    }
     
     
     
