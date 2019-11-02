@@ -642,6 +642,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="ajT-Xf-WDZ"/>
                     <connections>
+                        <outlet property="tipsLabel" destination="8eI-oJ-ZVw" id="s34-mM-UeY"/>
                         <segue destination="Jml-vE-FX5" kind="presentation" identifier="successCheck" id="Auu-5y-7CK"/>
                         <segue destination="w4T-AY-4nM" kind="presentation" identifier="failedCheck" id="2WF-8v-hnN"/>
                     </connections>
@@ -794,6 +795,7 @@
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="2WF-8v-hnN"/>
         <segue reference="Cta-pU-Ip3"/>
     </inferredMetricsTieBreakers>
 </document>
