@@ -54,7 +54,7 @@
             </objects>
             <point key="canvasLocation" x="-417" y="-1417"/>
         </scene>
-        <!--First-->
+        <!--Home-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Dollar" customModuleProvider="target" sceneMemberID="viewController">
@@ -62,19 +62,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0a-lO-2Xo">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="142"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0a-lO-2Xo">
+                                <rect key="frame" x="0.0" y="142" width="414" height="0.0"/>
                                 <color key="backgroundColor" red="0.99607843137254903" green="0.74117647058823533" blue="0.031372549019607843" alpha="0.60000002379999995" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEF-Bg-gZx">
-                                <rect key="frame" x="20" y="223" width="374" height="73"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="73" id="LoI-fk-fX4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -189,25 +180,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emma Woods" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEF-Bg-gZx">
+                                <rect key="frame" x="20" y="199" width="374" height="73"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="73" id="LoI-fk-fX4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ubK-d2-aTf" firstAttribute="top" secondItem="XEF-Bg-gZx" secondAttribute="bottom" constant="26" id="1KQ-fb-06p"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="ubK-d2-aTf" secondAttribute="trailing" constant="230" id="348-7T-hQk"/>
-                            <constraint firstItem="XEF-Bg-gZx" firstAttribute="top" secondItem="pLW-Xv-Nsd" secondAttribute="bottom" constant="10" id="3e4-ow-FGA"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="ryF-Ai-34C" secondAttribute="bottom" constant="19" id="4pQ-yc-Thg"/>
                             <constraint firstItem="pLW-Xv-Nsd" firstAttribute="top" secondItem="O0a-lO-2Xo" secondAttribute="bottom" constant="8" symbolic="YES" id="6xO-2T-jMS"/>
                             <constraint firstItem="Bgu-pE-tnm" firstAttribute="top" secondItem="ubK-d2-aTf" secondAttribute="bottom" constant="8" id="9Pk-3f-3kh"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="XEF-Bg-gZx" secondAttribute="trailing" constant="20" id="Ecc-FM-h1H"/>
                             <constraint firstItem="ubK-d2-aTf" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="NaO-LW-1Bl"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="pLW-Xv-Nsd" secondAttribute="trailing" constant="20" id="OUz-fm-KQu"/>
                             <constraint firstItem="ryF-Ai-34C" firstAttribute="top" secondItem="Bgu-pE-tnm" secondAttribute="bottom" constant="8" id="PW0-rv-oau"/>
                             <constraint firstItem="Bgu-pE-tnm" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="PcY-jy-8AV"/>
                             <constraint firstItem="pLW-Xv-Nsd" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" constant="150" id="UG4-od-olD"/>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="XEF-Bg-gZx" secondAttribute="trailing" constant="20" id="Y9f-8v-XRf"/>
+                            <constraint firstItem="XEF-Bg-gZx" firstAttribute="top" secondItem="O0a-lO-2Xo" secondAttribute="bottom" constant="57" id="Vvb-tg-cqN"/>
                             <constraint firstItem="pLW-Xv-Nsd" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="Z4T-U0-fba"/>
                             <constraint firstItem="Bgu-pE-tnm" firstAttribute="leading" secondItem="O0a-lO-2Xo" secondAttribute="leading" id="axC-Gh-Ali"/>
                             <constraint firstItem="pLW-Xv-Nsd" firstAttribute="trailing" secondItem="ryF-Ai-34C" secondAttribute="trailing" id="dIV-0O-Hpj"/>
-                            <constraint firstItem="XEF-Bg-gZx" firstAttribute="trailing" secondItem="ryF-Ai-34C" secondAttribute="trailing" id="h1X-4D-Ww3"/>
-                            <constraint firstItem="XEF-Bg-gZx" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="l4k-wD-Q50"/>
+                            <constraint firstItem="XEF-Bg-gZx" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="kr9-Y2-4Gg"/>
                             <constraint firstItem="ryF-Ai-34C" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="344" id="p64-Xx-TT1"/>
                             <constraint firstItem="Bgu-pE-tnm" firstAttribute="trailing" secondItem="O0a-lO-2Xo" secondAttribute="trailing" id="uUi-rd-tnc"/>
                             <constraint firstItem="Bgu-pE-tnm" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="uqN-di-tPc"/>
@@ -215,7 +215,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" selectedImage="home" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="homeNameLabel" destination="XEF-Bg-gZx" id="MrX-c1-p0n"/>
                         <outlet property="popUpButton" destination="ksf-xT-OJw" id="uOs-f8-0zy"/>
@@ -307,11 +307,11 @@
             </objects>
             <point key="canvasLocation" x="1153.6231884057972" y="225.66964285714283"/>
         </scene>
-        <!--Item-->
+        <!--Budget-->
         <scene sceneID="1Ad-xK-StD">
             <objects>
                 <navigationController id="YDD-8h-h4M" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="uvG-lI-yx1"/>
+                    <tabBarItem key="tabBarItem" title="Budget" image="target" id="uvG-lI-yx1"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="agK-1A-Df0">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -589,11 +589,11 @@
             </objects>
             <point key="canvasLocation" x="1969.5652173913045" y="225.66964285714283"/>
         </scene>
-        <!--Item-->
+        <!--Spendings-->
         <scene sceneID="I2b-d6-FW6">
             <objects>
                 <navigationController id="yqm-Yr-xcX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Up1-xa-xsj"/>
+                    <tabBarItem key="tabBarItem" title="Spendings" image="spendings" id="Up1-xa-xsj"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="54E-OS-mLH">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -608,7 +608,7 @@
             </objects>
             <point key="canvasLocation" x="1970" y="-617"/>
         </scene>
-        <!--Item-->
+        <!--Savings-->
         <scene sceneID="m71-3u-yKj">
             <objects>
                 <viewController id="xBx-pQ-IcG" customClass="SavingsViewController" customModule="Dollar" customModuleProvider="target" sceneMemberID="viewController">
@@ -650,7 +650,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="D2r-Q4-n25"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="ajT-Xf-WDZ"/>
+                    <tabBarItem key="tabBarItem" title="Savings" image="savings" id="ajT-Xf-WDZ"/>
                     <connections>
                         <outlet property="tipsLabel" destination="8eI-oJ-ZVw" id="s34-mM-UeY"/>
                         <segue destination="Jml-vE-FX5" kind="presentation" identifier="successCheck" id="Auu-5y-7CK"/>
@@ -763,7 +763,7 @@
             </objects>
             <point key="canvasLocation" x="3557.971014492754" y="223.66071428571428"/>
         </scene>
-        <!--Item-->
+        <!--Summary-->
         <scene sceneID="Yd6-kG-LEP">
             <objects>
                 <viewController id="KyH-RP-DMy" sceneMemberID="viewController">
@@ -773,7 +773,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="S6z-jI-prf"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="whp-1b-fQ9"/>
+                    <tabBarItem key="tabBarItem" title="Summary" image="graphs" id="whp-1b-fQ9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HOd-GP-ssU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -802,9 +802,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="graphs" width="24" height="24"/>
+        <image name="home" width="24" height="24"/>
+        <image name="savings" width="24" height="24"/>
+        <image name="spendings" width="24" height="24"/>
+        <image name="target" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Cta-pU-Ip3"/>
+        <segue reference="X3L-ns-KEH"/>
     </inferredMetricsTieBreakers>
 </document>
