@@ -8,17 +8,25 @@
 
 import UIKit
 
-class AddorEditTableViewController: UITableViewController {
+class AddorEditTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
-    var budget: Budget!
-    var needBudget = true
+    
     
     @IBOutlet weak var categoryTextfield: UITextField!
     @IBOutlet weak var iconTextField: UITextField!
     @IBOutlet weak var budgetTextField: UITextField!
     
+    var budget: Budget!
+    var needBudget = true
+    var icons = ["baby.png","clothes.png","devices.png", "education.png", "entertainment.png","food.png", "gift.png", "graphs.png", "groceries.png", "health.png", "holiday.png", "membership.png", "pet.png", "renovation.png", "self.png", "shopping.png", "sports.png", "transport.png"]
+    var picker = UIPickerView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        picker.delegate = self
+        picker.dataSource = self
+        iconTextField.inputView = picker
+        
         if budget != nil{
             needBudget = false
             categoryTextfield.text = budget.category
@@ -27,6 +35,25 @@ class AddorEditTableViewController: UITableViewController {
             
         }
     }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return icons.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        iconTextField.text = icons[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return icons[row]
+    }
+
+    
+    
 
     // MARK: - Table view data source
 //

@@ -10,6 +10,8 @@ import UIKit
 
 class SpendingsTableViewController: UITableViewController, SpendingCellDelegate {
     
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
     func textFieldClicked(id: String, money: Double) {
         var overallSpending = 0.0
         for (index, currentRow) in spendingArray.enumerated() {
@@ -80,10 +82,15 @@ class SpendingsTableViewController: UITableViewController, SpendingCellDelegate 
                 overallSpending = 0.0
                 for element in spendingArray {
                     overallSpending += element.spending
+                }
+                let numberFormatter = NumberFormatter()
+                numberFormatter.minimumIntegerDigits = 1
+                numberFormatter.minimumFractionDigits = 2
+                numberFormatter.maximumFractionDigits = 2
+                var numberBeforeFormat = (Double(round(100*overallSpending)/100))
+                cell2.overallSpendingsLabel.text = "$\(numberFormatter.string(from: NSNumber(value: numberBeforeFormat))!)"
                 let defaults = UserDefaults.standard
                 defaults.set(overallSpending, forKey: "totalSpending")
-                }
-                cell2.overallSpendingsLabel.text = "\(overallSpending)"
             }
             return cell2
         }
@@ -93,7 +100,12 @@ class SpendingsTableViewController: UITableViewController, SpendingCellDelegate 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40
     }
-
+    
+    
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        tableView.reloadData()
+    }
+    
     
     /*
     // Override to support conditional editing of the table view.

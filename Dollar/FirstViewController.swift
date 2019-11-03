@@ -99,9 +99,11 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             cell.firstCategoryLabel?.text = currentDailyBudget.category
             cell.firstIconImage?.image = UIImage(named: currentDailyBudget.imageFileName)
             let numberFormatter = NumberFormatter()
+            numberFormatter.minimumIntegerDigits = 1
             numberFormatter.minimumFractionDigits = 2
+            numberFormatter.maximumIntegerDigits = 2
             var numberBeforeFormat = (Double(round(100*(currentDailyBudget.budget / 30.0))/100))
-            cell.firstBudgetLabel?.text = numberFormatter.string(from: NSNumber(value: numberBeforeFormat))
+            cell.firstBudgetLabel?.text = "$\(numberFormatter.string(from: NSNumber(value: numberBeforeFormat))!)"
 //            "\(Double(round(100*(currentDailyBudget.budget / 30.0))/100))"
             }
 

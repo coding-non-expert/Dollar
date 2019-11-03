@@ -58,7 +58,7 @@ class BudgetTableViewController: UITableViewController {
                 let numberFormatter = NumberFormatter()
                 numberFormatter.minimumFractionDigits = 2
                 var numberBeforeFormat = (Double(round(100*monthlyBudget.budget)/100))
-                cell.budgetLabel?.text = numberFormatter.string(from: NSNumber(value: numberBeforeFormat))
+                cell.budgetLabel?.text = "$\(numberFormatter.string(from: NSNumber(value: numberBeforeFormat))!)"
 
 //                cell.budgetLabel?.text = "\(monthlyBudget.budget)"
             } else {
@@ -69,9 +69,11 @@ class BudgetTableViewController: UITableViewController {
                 }
                 cell.iconImage?.image = nil
                 let numberFormatter = NumberFormatter()
+                numberFormatter.minimumIntegerDigits = 1
                 numberFormatter.minimumFractionDigits = 2
+                numberFormatter.maximumFractionDigits = 2
                 var numberBeforeFormat = (Double(round(100*overallMoney)/100))
-                cell.budgetLabel?.text = numberFormatter.string(from: NSNumber(value: numberBeforeFormat))
+                cell.budgetLabel?.text = "$\(numberFormatter.string(from: NSNumber(value: numberBeforeFormat))!)"
                 let defaults = UserDefaults.standard
                 defaults.set(overallMoney, forKey: "totalBudget")
             }
