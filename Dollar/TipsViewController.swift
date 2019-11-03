@@ -11,6 +11,7 @@ import UIKit
 class TipsViewController: UIViewController {
 
     @IBOutlet weak var tipsLabel: UILabel!
+    @IBOutlet weak var nextTipButton: UIButton!
     
     var tipsCount = 0
     
@@ -42,11 +43,19 @@ class TipsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tipsLabel.text = tips[0]
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func nextTipButtonPressed(_ sender: Any) {
+        if tipsCount < tips.count - 1 {
+            tipsCount += 1
+            tipsLabel.text = tips[tipsCount]
+        } else {
+            tipsCount = 0
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
