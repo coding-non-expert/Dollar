@@ -180,34 +180,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emma Woods" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEF-Bg-gZx">
-                                <rect key="frame" x="20" y="199" width="374" height="73"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="73" id="LoI-fk-fX4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="insert your name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hcS-sh-zYU">
+                                <rect key="frame" x="20" y="214" width="328" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                                <connections>
+                                    <action selector="nameTextFieldFilled:" destination="9pv-A4-QxB" eventType="editingDidEnd" id="ygU-gT-rky"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ubK-d2-aTf" firstAttribute="top" secondItem="XEF-Bg-gZx" secondAttribute="bottom" constant="26" id="1KQ-fb-06p"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="ubK-d2-aTf" secondAttribute="trailing" constant="230" id="348-7T-hQk"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="ryF-Ai-34C" secondAttribute="bottom" constant="19" id="4pQ-yc-Thg"/>
                             <constraint firstItem="pLW-Xv-Nsd" firstAttribute="top" secondItem="O0a-lO-2Xo" secondAttribute="bottom" constant="8" symbolic="YES" id="6xO-2T-jMS"/>
                             <constraint firstItem="Bgu-pE-tnm" firstAttribute="top" secondItem="ubK-d2-aTf" secondAttribute="bottom" constant="8" id="9Pk-3f-3kh"/>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="XEF-Bg-gZx" secondAttribute="trailing" constant="20" id="Ecc-FM-h1H"/>
                             <constraint firstItem="ubK-d2-aTf" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="NaO-LW-1Bl"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="pLW-Xv-Nsd" secondAttribute="trailing" constant="20" id="OUz-fm-KQu"/>
                             <constraint firstItem="ryF-Ai-34C" firstAttribute="top" secondItem="Bgu-pE-tnm" secondAttribute="bottom" constant="8" id="PW0-rv-oau"/>
                             <constraint firstItem="Bgu-pE-tnm" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="PcY-jy-8AV"/>
                             <constraint firstItem="pLW-Xv-Nsd" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" constant="150" id="UG4-od-olD"/>
-                            <constraint firstItem="XEF-Bg-gZx" firstAttribute="top" secondItem="O0a-lO-2Xo" secondAttribute="bottom" constant="57" id="Vvb-tg-cqN"/>
                             <constraint firstItem="pLW-Xv-Nsd" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="Z4T-U0-fba"/>
                             <constraint firstItem="Bgu-pE-tnm" firstAttribute="leading" secondItem="O0a-lO-2Xo" secondAttribute="leading" id="axC-Gh-Ali"/>
                             <constraint firstItem="pLW-Xv-Nsd" firstAttribute="trailing" secondItem="ryF-Ai-34C" secondAttribute="trailing" id="dIV-0O-Hpj"/>
-                            <constraint firstItem="XEF-Bg-gZx" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="kr9-Y2-4Gg"/>
                             <constraint firstItem="ryF-Ai-34C" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="344" id="p64-Xx-TT1"/>
                             <constraint firstItem="Bgu-pE-tnm" firstAttribute="trailing" secondItem="O0a-lO-2Xo" secondAttribute="trailing" id="uUi-rd-tnc"/>
                             <constraint firstItem="Bgu-pE-tnm" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="uqN-di-tPc"/>
@@ -217,7 +214,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="home" selectedImage="home" id="acW-dT-cKf"/>
                     <connections>
-                        <outlet property="homeNameLabel" destination="XEF-Bg-gZx" id="MrX-c1-p0n"/>
+                        <outlet property="nameTextField" destination="hcS-sh-zYU" id="hgt-AE-P8w"/>
                         <outlet property="popUpButton" destination="ksf-xT-OJw" id="uOs-f8-0zy"/>
                         <outlet property="tableView" destination="Bgu-pE-tnm" id="GPa-np-Op0"/>
                     </connections>
@@ -349,7 +346,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>

@@ -56,6 +56,36 @@ class Budget: Codable {
 
 }
 
+class Name: Codable {
+    var name: String
+    
+    init (name: String){
+        self.name = name
+    }
+
+    static func getArchiveURL() -> URL {
+        let plistName = "names"
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        return documentsDirectory.appendingPathComponent(plistName).appendingPathExtension("plist")
+    }
+    
+    static func saveToFile(names: [Name]) {
+        let archiveURL = getArchiveURL()
+        let propertyListEncoder = PropertyListEncoder()
+        let encodedName = try? propertyListEncoder.encode(names)
+        try? encodedName?.write(to: archiveURL, options: .noFileProtection)
+    }
+    
+    static func loadFromFile() -> [Name]? {
+        let archiveURL = getArchiveURL()
+        let propertyListDecoder = PropertyListDecoder()
+        guard let retrievedNameData = try? Data(contentsOf: archiveURL) else { return nil }
+        guard let decodedName = try? propertyListDecoder.decode(Array<Name>.self, from: retrievedNameData) else { return nil }
+        return decodedName
+    }
+    
+}
+
 //
 //class Spending: Codable {
 //    var category: String

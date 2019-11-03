@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddorEditTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class AddorEditTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
 
     
     
@@ -25,6 +25,8 @@ class AddorEditTableViewController: UITableViewController, UIPickerViewDataSourc
         super.viewDidLoad()
         picker.delegate = self
         picker.dataSource = self
+        categoryTextfield.delegate = self
+        budgetTextField.delegate = self
         iconTextField.inputView = picker
         
         if budget != nil{
@@ -51,6 +53,14 @@ class AddorEditTableViewController: UITableViewController, UIPickerViewDataSourc
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return icons[row]
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        categoryTextfield.resignFirstResponder()
+        budgetTextField.resignFirstResponder()
+        return false
+    }
+    
+
 
     
     

@@ -9,22 +9,26 @@
 import UIKit
 
 
-class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    @IBOutlet weak var homeNameLabel: UILabel!
+class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+    
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var popUpButton: UIButton!
   
+    var names: Name!
+    var needName = true
     var budgetArray: [Budget] = Budget.loadFromFile() ?? Budget.loadSampleData()
 
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
         
         // Might want to check userDefaults here to see if a name has been set
         // If it has... no need to run the code below!
         
-        let defaults = UserDefaults.standard
+        //let defaults = UserDefaults.standard
+        /*
         if let uname = defaults.string(forKey: "name") {
            // self.homeNameLabel.text = alertText
             return
@@ -55,16 +59,22 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         present(alert, animated: true)
         
         }
-    }
+    }*/
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        nameTextField.delegate = self
         self.applyRoundCorner(popUpButton)
+        
+        if names != nil{
+            needName = false
+            nameTextField.text = names.name
+        }
     
     }
-    
+        
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
         if let loadedBudget = Budget.loadFromFile(){
@@ -115,15 +125,22 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         object.layer.cornerRadius = object.frame.size.width / 2
         object.layer.masksToBounds = true
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nameTextField.resignFirstResponder()
+        return false
+    }
 
         
+    @IBAction func nameTextFieldFilled(_ sender: Any) {
         
+    }
+    
     @IBAction func popUpButtonPressed(_ sender: Any) {
         let alertController = UIAlertController(title: "Want to know how your daily budget is calculated?", message: "Dollar divides the monthly budget by the number of days in the month to give you your daily budget.", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
         self.present(alertController, animated: true, completion: nil)
     }
-    
     
     
 }
