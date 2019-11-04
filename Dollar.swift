@@ -25,11 +25,11 @@ class Budget: Codable {
 
     static func loadSampleData() -> [Budget]{
         return[
-            Budget(category: "Transport", imageFileName: "car", budget: 0.0, spending: 0.0),
+            Budget(category: "Transport", imageFileName: "transport", budget: 0.0, spending: 0.0),
             Budget(category: "Food", imageFileName: "food", budget: 0.0, spending: 0.0),
             Budget(category: "Savings", imageFileName: "savings", budget: 0.0, spending: 0.0),
-            Budget(category: "Bills", imageFileName: "bills", budget: 0.0, spending: 0.0),
-            Budget(category: "Holiday", imageFileName: "travel", budget: 0.0, spending: 0.0)
+            Budget(category: "Education", imageFileName: "education", budget: 0.0, spending: 0.0),
+            Budget(category: "Holiday", imageFileName: "holiday", budget: 0.0, spending: 0.0)
         ]
     }
     

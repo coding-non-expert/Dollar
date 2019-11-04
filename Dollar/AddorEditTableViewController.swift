@@ -18,7 +18,7 @@ class AddorEditTableViewController: UITableViewController, UIPickerViewDataSourc
     
     var budget: Budget!
     var needBudget = true
-    var icons = ["baby.png","clothes.png","devices.png", "education.png", "entertainment.png","food.png", "gift.png", "graphs.png", "groceries.png", "health.png", "holiday.png", "membership.png", "pet.png", "renovation.png", "self.png", "shopping.png", "sports.png", "transport.png"]
+    var icons = ["baby.png","clothes.png","devices.png", "education.png", "entertainment.png","food.png", "gift.png", "groceries.png", "health.png", "holiday.png", "membership.png", "pet.png", "renovation.png", "self.png", "shopping.png", "sports.png", "transport.png"]
     var picker = UIPickerView()
     
     override func viewDidLoad() {

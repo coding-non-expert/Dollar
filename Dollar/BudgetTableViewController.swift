@@ -56,6 +56,7 @@ class BudgetTableViewController: UITableViewController {
                 cell.categoryLabel?.text = monthlyBudget.category
                 cell.iconImage?.image = UIImage(named: monthlyBudget.imageFileName)
                 let numberFormatter = NumberFormatter()
+                numberFormatter.minimumIntegerDigits = 1
                 numberFormatter.minimumFractionDigits = 2
                 var numberBeforeFormat = (Double(round(100*monthlyBudget.budget)/100))
                 cell.budgetLabel?.text = "$\(numberFormatter.string(from: NSNumber(value: numberBeforeFormat))!)"
