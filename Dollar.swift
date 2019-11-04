@@ -58,9 +58,11 @@ class Budget: Codable {
 
 class Name: Codable {
     var name: String
+    var id: String
     
     init (name: String){
         self.name = name
+        self.id = UUID().uuidString
     }
 
     static func getArchiveURL() -> URL {

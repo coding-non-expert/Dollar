@@ -180,16 +180,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="insert your name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hcS-sh-zYU">
-                                <rect key="frame" x="20" y="214" width="328" height="52"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYb-eO-8ZL">
+                                <rect key="frame" x="20" y="214" width="328" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
-                                <connections>
-                                    <action selector="nameTextFieldFilled:" destination="9pv-A4-QxB" eventType="editingDidEnd" id="ygU-gT-rky"/>
-                                </connections>
-                            </textField>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -214,7 +211,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="home" selectedImage="home" id="acW-dT-cKf"/>
                     <connections>
-                        <outlet property="nameTextField" destination="hcS-sh-zYU" id="hgt-AE-P8w"/>
+                        <outlet property="homeNameLabel" destination="HYb-eO-8ZL" id="MO3-1q-Wt4"/>
                         <outlet property="popUpButton" destination="ksf-xT-OJw" id="uOs-f8-0zy"/>
                         <outlet property="tableView" destination="Bgu-pE-tnm" id="GPa-np-Op0"/>
                     </connections>
@@ -689,13 +686,13 @@
                     </view>
                     <connections>
                         <outlet property="tapGestureRecognizer" destination="HOb-iY-FKg" id="jcy-7x-vNd"/>
+                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="congratsClicked" id="nE4-SU-00H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eZU-Yv-CCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="HOb-iY-FKg">
                     <connections>
                         <action selector="tapped:" destination="Jml-vE-FX5" id="WXT-oX-1dE"/>
-                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="congratsClicked" id="AhZ-5Z-t23"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -740,13 +737,13 @@
                     </view>
                     <connections>
                         <outlet property="tapGestureRecognizer" destination="7Cj-hc-Svh" id="ACh-K7-6DD"/>
+                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="failedClicked" id="g10-qJ-CSN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0RB-JI-ZJM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="7Cj-hc-Svh">
                     <connections>
                         <action selector="tapped:" destination="w4T-AY-4nM" id="mfO-uw-uh2"/>
-                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="failedClicked" id="I50-qv-4Ey"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -862,6 +859,6 @@
         <image name="tips" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="I50-qv-4Ey"/>
+        <segue reference="g10-qJ-CSN"/>
     </inferredMetricsTieBreakers>
 </document>
